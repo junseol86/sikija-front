@@ -9,11 +9,7 @@ declare var $: any
 @Component({
   moduleId: module.id,
   selector: 'delivery',
-  template: `
-    <div *ngFor="let delivery of deliveries" [class.selected]="delivery === selectedDelivery">
-        <span>{{delivery.name}}</span>
-    </div>
-`,
+  templateUrl: './delivery.comp.html',
   styleUrls: ['../../Styles/2_delivery.css'],
 })
 
@@ -34,10 +30,10 @@ export class DeliveryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDeliveries('all');
+    $.getScript('/app/Scripts/0_app.js');
   }
 
   onSelect(delivery: Delivery) {
     this.selectedDelivery = delivery;
   }
-
 }

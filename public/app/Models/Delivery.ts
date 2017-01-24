@@ -4,7 +4,8 @@
 export class Delivery {
   _id: string;
   idx: number;
-  category: string;
+  category: string[];
+  schools: string[];
   name: string;
   phone: string;
 }

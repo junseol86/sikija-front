@@ -15,9 +15,7 @@ declare var $: any
   styleUrls: ['Styles/0_app.css'],
 })
 export class AppComponent implements OnInit {
-  name = 'Angular';
-
   ngOnInit() {
-    $.getScript('/app/Scripts/0_app.js');
+    $.getScript('/app/Scripts/0_sizer.js');
   }
 }

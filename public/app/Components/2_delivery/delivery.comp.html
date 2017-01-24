@@ -1,0 +1,6 @@
+<div id="sub_menu_bar"></div>
+<div id="vertical_scroll_area">
+  <div class="delivery_item" *ngFor="let delivery of deliveries" [class.selected]="delivery === selectedDelivery">
+    <span>{{delivery.name}}</span>
+  </div>
+</div>

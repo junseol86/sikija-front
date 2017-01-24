@@ -12,7 +12,6 @@ export class TopBarComponent {
   constructor(
     private router: Router
   ) { }
-
   goHome(): void {
     this.router.navigate(['/'])
   }

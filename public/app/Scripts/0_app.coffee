@@ -9,4 +9,3 @@ else
 
 outerWrapper.css 'height', winHeight
 
-

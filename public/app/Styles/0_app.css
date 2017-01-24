@@ -10,6 +10,14 @@ a {
 ._float_con:after {
   clear: both; }
 
+#sub_menu_bar {
+  width: 100%;
+  height: 44px;
+  background-color: #707070; }
+
+#vertical_scroll_area {
+  overflow-y: scroll; }
+
 #outer_space {
   position: relative;
   background-color: #333333; }

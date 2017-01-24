@@ -25,17 +25,19 @@
   url = f('mongodb://%s:%s@133.130.103.96:27017/sikija?authMechanism=%s&authSource=%s', user, password, authMechanism, authSource);
 
   router.get('/list/:category', function(req, res, next) {
-    var category;
-    category = req.params.category.replace('all', '');
+    var category, condition;
+    category = req.params.category;
+    condition = category === 'all' ? {} : {
+      "category": {
+        $in: [category]
+      }
+    };
+    console.log(category);
     return MongoClient.connect(url, function(err, db) {
       var delivery;
       assert.equal(null, err);
       delivery = db.collection('delivery');
-      delivery.find({
-        "category": {
-          $regex: category
-        }
-      }).toArray(function(err, docs) {
+      delivery.find(condition).toArray(function(err, docs) {
         return res.send(docs);
       });
       return db.close;
