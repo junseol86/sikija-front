@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!--처음에 어디로 라우팅될지를 지정한다-->
+    <script>document.write('<base href="' + document.location + '" />');</script>
+
+    <title>시키자!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app/Styles/0_intro.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+    <script language="javascript" src="jquery-3.1.1.min.js"></script>
+    <script language="javascript" src="app/Scripts/0_intro.js"></script>
+
+  </head>
+
+  <body>
+    <my-app>
+      <div id="intro">
+        <span></span>
+        <img src="app/Images/Interface/0_intro_logo.png">
+
+      </div>
+    </my-app>
+  </body>
+</html>

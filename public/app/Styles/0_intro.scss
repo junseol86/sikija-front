@@ -1,0 +1,14 @@
+@import "common";
+
+body {
+  background-color: $sikija_color;
+}
+
+#intro {
+  text-align: center;
+  & > img {
+    visibility: hidden;
+    width: 165px;
+    height: 55px;
+  }
+}

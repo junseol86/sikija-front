@@ -1,0 +1,21 @@
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+._pos_rel {
+  position: relative; }
+
+._float_con > * {
+  float: left; }
+._float_con:after {
+  clear: both; }
+
+#outer_space {
+  position: relative;
+  background-color: #333333; }
+
+#outer_wrapper {
+  background-color: white;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=0_app.css.map */

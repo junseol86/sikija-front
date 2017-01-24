@@ -1,0 +1,19 @@
+$sikija_color: tomato;
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+._pos_rel {
+  position: relative;
+}
+
+._float_con {
+  & > * {
+    float: left;
+  }
+  &:after {
+    clear: both;
+  }
+}

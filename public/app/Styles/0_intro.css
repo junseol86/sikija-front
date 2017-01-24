@@ -1,0 +1,23 @@
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+._pos_rel {
+  position: relative; }
+
+._float_con > * {
+  float: left; }
+._float_con:after {
+  clear: both; }
+
+body {
+  background-color: tomato; }
+
+#intro {
+  text-align: center; }
+  #intro > img {
+    visibility: hidden;
+    width: 165px;
+    height: 55px; }
+
+/*# sourceMappingURL=0_intro.css.map */
