@@ -10,10 +10,8 @@ declare var $: any
   moduleId: module.id,
   selector: 'delivery',
   template: `
-    <h1>delivery</h1>
     <div *ngFor="let delivery of deliveries" [class.selected]="delivery === selectedDelivery">
         <span>{{delivery.name}}</span>
-        <span>hoho</span>
     </div>
 `,
   styleUrls: ['../../Styles/2_delivery.css'],
