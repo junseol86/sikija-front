@@ -2,6 +2,10 @@ $sikija_color: tomato;
 $light_line_color: #EAEAEA;
 $sub_menu_bar_bg: #707070;
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   cursor: pointer;
   text-decoration: none;

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Delivery } from '../../Models/Delivery'
 import { DeliveryService } from '../../Services/delivery.service'
@@ -18,8 +18,9 @@ export class DeliveryComponent implements OnInit {
   selectedDelivery: Delivery;
 
   constructor(
+    private router: Router,
     private deliveryService: DeliveryService,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ) { }
 
   getDeliveries(category: string): void {
@@ -29,8 +30,19 @@ export class DeliveryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDeliveries('all');
-    $.getScript('/app/Scripts/0_app.js');
+    this.activatedRoute.params.subscribe((params: Params) => {
+      let category = params['category'];
+      this.getDeliveries(category);
+      $('.selected').removeClass('selected');
+      $('#' + category).addClass('selected');
+
+      $.getScript('/app/Scripts/0_app.js');
+    });
+  }
+
+  selectCategory(category: string):void {
+    this.router.navigate(['/delivery/' + category])
+
   }
 
   onSelect(delivery: Delivery) {

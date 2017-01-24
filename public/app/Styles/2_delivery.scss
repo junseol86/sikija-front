@@ -8,3 +8,20 @@
     line-height: 54px;
   }
 }
+
+#sub_menu_bar {
+  padding-left: 8px;
+  &:after {
+    clear: both;
+  }
+  & > div {
+    float: left;
+    color: white;
+    height: 100%;
+    line-height: 46px;
+    margin: 0px 10px 0px 10px;
+  }
+  & > div.selected {
+    border-bottom: 6px solid $sikija_color;
+  }
+}
