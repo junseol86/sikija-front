@@ -1,7 +1,9 @@
 <div id="topbar" class="_pos_rel">
   <nav>
-    <a routerLink = "/delivery/all" routerLinkActive="active">배달음식</a>
-    <a>학식메뉴</a>
+    <a class="topbar_btn_dashboard" routerLink="/delivery/all" routerLinkActive="active">배달음식</a>
+    <a class="topbar_btn_dashboard">학식메뉴</a>
+    <a class="topbar_btn_back" (click)="goBack()">← 뒤로</a>
+    <a class="topbar_btn_home" (click)="goHome()">← 홈으로</a>
   </nav>
   <img src="/app/Images/Interface/0_topbar_logo.png" (click)="goHome()">
 </div>

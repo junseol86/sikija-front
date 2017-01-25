@@ -9,5 +9,9 @@ declare var $: any
 `,
   styleUrls: ['../../Styles/2_dashboard.css'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  ngOnInit(): void {
+    $('#topbar a').css('display', 'none');
+    $('#topbar a.topbar_btn_dashboard').css('display', 'inline');
+  }
 }

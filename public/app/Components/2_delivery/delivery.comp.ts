@@ -24,6 +24,9 @@ export class DeliveryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    $('#topbar a').css('display', 'none');
+    $('#topbar a.topbar_btn_home').css('display', 'inline');
+
     this.activatedRoute.params.subscribe((params: Params) => {
       let category = params['category'];
       this.getDeliveries(category);
