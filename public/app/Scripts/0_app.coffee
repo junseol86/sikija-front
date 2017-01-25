@@ -8,4 +8,3 @@ else
   outerWrapper.css 'width', '100%'
 
 outerWrapper.css 'height', winHeight
-

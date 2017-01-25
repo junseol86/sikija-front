@@ -16,6 +16,6 @@ declare var $: any
 })
 export class AppComponent implements OnInit {
   ngOnInit() {
-    $.getScript('/app/Scripts/0_sizer.js');
+    $.getScript('/app/Scripts/0_app.js');
   }
 }

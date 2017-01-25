@@ -36,7 +36,7 @@ export class DeliveryComponent implements OnInit {
       $('.selected').removeClass('selected');
       $('#' + category).addClass('selected');
 
-      $.getScript('/app/Scripts/0_app.js');
+      $.getScript('/app/Scripts/0_sizer.js');
     });
   }
 
