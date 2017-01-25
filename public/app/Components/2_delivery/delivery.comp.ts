@@ -23,12 +23,6 @@ export class DeliveryComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { }
 
-  getDeliveries(category: string): void {
-    this.deliveryService
-      .getDeliveries(category)
-      .then(deliveries => this.deliveries = deliveries);
-  }
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       let category = params['category'];
@@ -39,6 +33,13 @@ export class DeliveryComponent implements OnInit {
       $.getScript('/app/Scripts/0_sizer.js');
     });
   }
+
+  getDeliveries(category: string): void {
+    this.deliveryService
+      .getDeliveries(category)
+      .then(deliveries => this.deliveries = deliveries);
+  }
+
 
   selectCategory(category: string):void {
     this.router.navigate(['/delivery/' + category])
