@@ -22,7 +22,16 @@ router.get '/list/:category', (req, res, next) ->
     assert.equal null, err
     delivery = db.collection 'delivery'
     delivery.find(condition).toArray (err, docs) ->
-      res.send docs
+      res.send {data: docs}
+    db.close
+
+router.get '/view/:id', (req, res, next) ->
+  condition = {'id': Number(req.params.id)}
+  MongoClient.connect url, (err, db) ->
+    assert.equal null, err
+    delivery = db.collection 'delivery'
+    delivery.findOne condition, (err, docs) ->
+      res.send {data: docs}
     db.close
 
 module.exports = router

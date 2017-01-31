@@ -17,13 +17,13 @@ export class DeliveryService {
     const url = `${this.deliveryUrl}/list/${category}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json() as Delivery[])
+      .then(response => response.json().data as Delivery[])
       .catch(this.handleError);
   }
 
 
   getDelivery(id: number): Promise<Delivery> {
-    const url = `${this.deliveryUrl}/${id}`;
+    const url = `${this.deliveryUrl}/view/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Delivery)

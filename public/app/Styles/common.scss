@@ -30,6 +30,20 @@ a {
   background-color: $sub_menu_bar_bg;
 }
 
-#vertical_scroll_area {
-  overflow-y: scroll;
+#scroll_area {
+  overflow: hidden;
+  &.vertical {
+    overflow-y: scroll;
+  }
+  &.horizontal {
+    overflow-x: scroll;
+  }
+  &.both {
+    overflow: scroll;
+  }
+}
+
+#bottom_bar {
+  height: 52px;
+  background-color: $sikija_color;
 }

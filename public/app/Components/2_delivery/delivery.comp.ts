@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Delivery } from '../../Models/Delivery'
@@ -14,8 +14,8 @@ declare var $: any
 })
 
 export class DeliveryComponent implements OnInit {
+  top_bar_menu_set:string = "btn_home";
   deliveries: Delivery[];
-  selectedDelivery: Delivery;
 
   constructor(
     private router: Router,
@@ -24,9 +24,6 @@ export class DeliveryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    $('#topbar a').css('display', 'none');
-    $('#topbar a.topbar_btn_home').css('display', 'inline');
-
     this.activatedRoute.params.subscribe((params: Params) => {
       let category = params['category'];
       this.getDeliveries(category);
@@ -43,13 +40,12 @@ export class DeliveryComponent implements OnInit {
       .then(deliveries => this.deliveries = deliveries);
   }
 
-
   selectCategory(category: string):void {
     this.router.navigate(['/delivery/' + category])
-
   }
 
-  onSelect(delivery: Delivery) {
-    this.selectedDelivery = delivery;
+  selectDelivery(id: string):void {
+    this.router.navigate(['/delivery/view/' + id])
   }
+
 }

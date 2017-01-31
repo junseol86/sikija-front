@@ -1,3 +1,4 @@
+<topBar [menu_set]="top_bar_menu_set"></topBar>
 <div id="sub_menu_bar">
   <div id="all" (click)="selectCategory('all')">전체</div>
   <div id="chicken" (click)="selectCategory('chicken')">치킨</div>
@@ -5,10 +6,9 @@
   <div id="chinese" (click)="selectCategory('chinese')">중식</div>
   <div id="snack" (click)="selectCategory('snack')">분식</div>
   <div id="pork" (click)="selectCategory('pork')">돈육</div>
-
 </div>
-<div id="vertical_scroll_area">
-  <div class="delivery_item" *ngFor="let delivery of deliveries" [class.selected]="delivery === selectedDelivery">
+<div id="scroll_area" class="vertical">
+  <div class="delivery_item" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
     <span>{{delivery.name}}</span>
   </div>
 </div>

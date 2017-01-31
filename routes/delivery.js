@@ -38,7 +38,27 @@
       assert.equal(null, err);
       delivery = db.collection('delivery');
       delivery.find(condition).toArray(function(err, docs) {
-        return res.send(docs);
+        return res.send({
+          data: docs
+        });
+      });
+      return db.close;
+    });
+  });
+
+  router.get('/view/:id', function(req, res, next) {
+    var condition;
+    condition = {
+      'id': Number(req.params.id)
+    };
+    return MongoClient.connect(url, function(err, db) {
+      var delivery;
+      assert.equal(null, err);
+      delivery = db.collection('delivery');
+      delivery.findOne(condition, function(err, docs) {
+        return res.send({
+          data: docs
+        });
       });
       return db.close;
     });

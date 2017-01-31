@@ -3,7 +3,7 @@
  */
 export class Delivery {
   _id: string;
-  idx: number;
+  id: number;
   category: string[];
   schools: string[];
   name: string;

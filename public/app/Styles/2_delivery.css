@@ -18,8 +18,18 @@ a {
   height: 44px;
   background-color: #707070; }
 
-#vertical_scroll_area {
-  overflow-y: scroll; }
+#scroll_area {
+  overflow: hidden; }
+  #scroll_area.vertical {
+    overflow-y: scroll; }
+  #scroll_area.horizontal {
+    overflow-x: scroll; }
+  #scroll_area.both {
+    overflow: scroll; }
+
+#bottom_bar {
+  height: 52px;
+  background-color: tomato; }
 
 .delivery_item {
   padding: 0px 16px 0px 16px;
@@ -39,6 +49,18 @@ a {
     line-height: 46px;
     margin: 0px 10px 0px 10px; }
   #sub_menu_bar > div.selected {
-    border-bottom: 4px solid tomato; }
+    border-bottom: 6px solid tomato; }
+
+#call_btn {
+  width: 100%;
+  height: 52px;
+  line-height: 54px;
+  color: white;
+  text-align: center;
+  font-size: 1.2em; }
+
+#leaflet {
+  width: 100%;
+  height: 100%; }
 
 /*# sourceMappingURL=2_delivery.css.map */

@@ -7,7 +7,7 @@ declare var $: any
   template: `
     <div id="outer_space">
       <div id="outer_wrapper">
-          <topbar></topbar>
+          <!--<topBar></topBar>-->
           <router-outlet></router-outlet>
       </div>
     </div>

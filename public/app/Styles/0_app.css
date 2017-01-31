@@ -18,8 +18,18 @@ a {
   height: 44px;
   background-color: #707070; }
 
-#vertical_scroll_area {
-  overflow-y: scroll; }
+#scroll_area {
+  overflow: hidden; }
+  #scroll_area.vertical {
+    overflow-y: scroll; }
+  #scroll_area.horizontal {
+    overflow-x: scroll; }
+  #scroll_area.both {
+    overflow: scroll; }
+
+#bottom_bar {
+  height: 52px;
+  background-color: tomato; }
 
 #outer_space {
   position: relative;
