@@ -34,14 +34,15 @@ export class DeliveryViewComponent implements OnInit {
     });
   }
 
-  loadDeliveryScript():void {
+  loadDeliveryScript(delivery: Delivery):void {
+    this.delivery = delivery
     $.getScript('/app/Scripts/2_delivery.js');
   }
 
   getDelivery(id: number):void {
     this.deliveryService
       .getDelivery(id)
-      .then(delivery => this.delivery = delivery)
+      .then(delivery => this.loadDeliveryScript(delivery))
   }
 
 }
