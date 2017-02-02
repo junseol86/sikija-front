@@ -8,6 +8,7 @@
         <item url="file://$PROJECT_DIR$/public/app/Scripts/2_delivery.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_image_processor.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_app.js" />
+        <item url="file://$PROJECT_DIR$/routes/location.js" />
         <item url="file://$PROJECT_DIR$/routes/delivery.js" />
       </sourceFilesUrls>
     </properties>
@@ -16,10 +17,11 @@
       <root url="file://$PROJECT_DIR$/routes/inde.js" />
       <root url="file://$PROJECT_DIR$/routes/index.js" />
       <root url="file://$PROJECT_DIR$/public/app/Scripts/0_intro.js" />
-      <root url="file://$PROJECT_DIR$/public/app/Scripts/0_sizer.js" />
-      <root url="file://$PROJECT_DIR$/public/app/Scripts/2_delivery.js" />
-      <root url="file://$PROJECT_DIR$/public/app/Scripts/0_image_processor.js" />
+      <root url="file://$PROJECT_DIR$/public/app/Scripts/_sizer.js" />
+      <root url="file://$PROJECT_DIR$/public/app/Scripts/3_delivery.js" />
+      <root url="file://$PROJECT_DIR$/public/app/Scripts/_image_processor.js" />
       <root url="file://$PROJECT_DIR$/public/app/Scripts/0_app.js" />
+      <root url="file://$PROJECT_DIR$/routes/location.js" />
       <root url="file://$PROJECT_DIR$/routes/delivery.js" />
     </CLASSES>
     <SOURCES />

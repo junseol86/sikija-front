@@ -1,10 +1,10 @@
 <topBar [menu_set]="top_bar_menu_set"></topBar>
 <div id="scroll_area" class="both">
-  <div id="leaflet" *ngIf="delivery" [ngStyle]="{'background-image': 'url(\'app/Images/contents/delivery/' + delivery.id + '.jpg\')'}" (click)="loadDeliveryScript()">
+  <div id="leaflet" *ngIf="delivery" [ngStyle]="{'background-image': 'url(\'app/Images/contents/delivery/' + delivery.id + '.jpg\')'}">
   </div>
 </div>
 <div id="bottom_bar" class="_float_con">
-  <div id="call_btn">
+  <div id="call_btn" *ngIf="delivery" (click)="callNumber(delivery.phone)">
     <i class="fa fa-phone" aria-hidden="true"></i>
     전화하기
   </div>

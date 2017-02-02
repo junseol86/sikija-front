@@ -10,7 +10,7 @@ declare var $: any
   moduleId: module.id,
   selector: 'delivery',
   templateUrl: './delivery.comp.html',
-  styleUrls: ['../../Styles/2_delivery.css'],
+  styleUrls: ['../../Styles/3_delivery.css'],
 })
 
 export class DeliveryComponent implements OnInit {
@@ -30,7 +30,7 @@ export class DeliveryComponent implements OnInit {
       $('.selected').removeClass('selected');
       $('#' + category).addClass('selected');
 
-      $.getScript('/app/Scripts/0_sizer.js');
+      $.getScript('/app/Scripts/_sizer.js');
     });
   }
 

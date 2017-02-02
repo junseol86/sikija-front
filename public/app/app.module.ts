@@ -8,17 +8,20 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent }  from './app.component';
-import { TopBarComponent } from './Components/1_top_bar/top_bar.comp'
+import { TopBarComponent } from './Components/_top_bar/top_bar.comp'
+import { LocationComponent } from './Components/1_location/location.comp'
+import { LocationService } from './Services/location.service'
 import { DashboardComponent } from './Components/2_dashboard/dashboard.comp'
-import { DeliveryComponent } from './Components/2_delivery/delivery.comp'
-import { DeliveryViewComponent } from './Components/2_delivery/delivery_view.comp'
+import { DeliveryComponent } from './Components/3_delivery/delivery.comp'
+import { DeliveryViewComponent } from './Components/3_delivery/delivery_view.comp'
 import { DeliveryService } from './Services/delivery.service'
 import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
-  declarations: [ AppComponent, TopBarComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService],
+  declarations: [ AppComponent, TopBarComponent,
+    LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent ],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, LocationService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

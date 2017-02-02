@@ -7,7 +7,7 @@ declare var $: any
   moduleId: module.id,
   selector: 'topBar',
   templateUrl: 'top_bar.comp.html',
-  styleUrls: ['../../Styles/1_top_bar.css'],
+  styleUrls: ['../../Styles/_top_bar.css'],
 })
 export class TopBarComponent implements OnInit {
   @Input() menu_set: string;
@@ -20,7 +20,7 @@ export class TopBarComponent implements OnInit {
   }
 
   goHome(): void {
-    this.router.navigate(['/'])
+    this.router.navigate(['/dashboard'])
   }
   goBack(): void {
     this.location.back()

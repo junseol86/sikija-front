@@ -5,7 +5,7 @@ export class Delivery {
   _id: string;
   id: number;
   category: string[];
-  schools: string[];
+  locations: number[];
   name: string;
   phone: string;
 }
