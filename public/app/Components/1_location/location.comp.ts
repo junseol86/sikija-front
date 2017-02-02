@@ -7,6 +7,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Location } from '../../Models/Location'
 import { LocationService } from '../../Services/location.service'
 
+import {CookieService} from 'angular2-cookie/core';
+
 declare var $: any
 
 @Component({
@@ -23,11 +25,14 @@ export class LocationComponent implements OnInit {
   constructor(
     private router: Router,
     private locationService: LocationService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cookie: CookieService
   ) { }
 
   ngOnInit(): void {
-    this.getLocations()
+    alert(this.cookie.get("location"));
+
+    this.getLocations();
 
     $.getScript('/app/Scripts/_sizer.js');
     console.log(this.locations);
@@ -36,11 +41,11 @@ export class LocationComponent implements OnInit {
   getLocations(): void {
     this.locationService
       .getLocations()
-      .then(locations => this.afterLoadingLocations(locations));
+      .then(locations => this.locations = locations);
   }
 
-  afterLoadingLocations(locations: Location[]): void {
-    console.log(locations);
+  selectLocation(id: number): void {
+    this.cookie.put("location", id.toString());
   }
 
 }

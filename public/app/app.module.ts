@@ -16,12 +16,14 @@ import { DeliveryComponent } from './Components/3_delivery/delivery.comp'
 import { DeliveryViewComponent } from './Components/3_delivery/delivery_view.comp'
 import { DeliveryService } from './Services/delivery.service'
 import {HttpModule} from "@angular/http";
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
   declarations: [ AppComponent, TopBarComponent,
     LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, LocationService],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, LocationService,
+    CookieService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

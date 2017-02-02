@@ -4,9 +4,9 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/routes/index.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_intro.js" />
-        <item url="file://$PROJECT_DIR$/public/app/Scripts/0_sizer.js" />
-        <item url="file://$PROJECT_DIR$/public/app/Scripts/2_delivery.js" />
-        <item url="file://$PROJECT_DIR$/public/app/Scripts/0_image_processor.js" />
+        <item url="file://$PROJECT_DIR$/public/app/Scripts/_sizer.js" />
+        <item url="file://$PROJECT_DIR$/public/app/Scripts/3_delivery.js" />
+        <item url="file://$PROJECT_DIR$/public/app/Scripts/_image_processor.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_app.js" />
         <item url="file://$PROJECT_DIR$/routes/location.js" />
         <item url="file://$PROJECT_DIR$/routes/delivery.js" />
