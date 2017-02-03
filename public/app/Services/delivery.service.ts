@@ -13,8 +13,8 @@ export class DeliveryService {
   constructor(private http: Http) { }
 
   // Array 형태일때는 response.json() 뒤에 .data를 붙이지 않는다.
-  getDeliveries(category: string): Promise<Delivery[]> {
-    const url = `${this.deliveryUrl}/list/${category}`;
+  getDeliveries(location: string, category: string): Promise<Delivery[]> {
+    const url = `${this.deliveryUrl}/list/${location}/${category}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Delivery[])

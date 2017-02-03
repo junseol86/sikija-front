@@ -2,7 +2,7 @@
   <nav>
     <a *ngIf="menu_set == 'select_location'">장소를 선택하세요.</a>
     <a *ngIf="menu_set == 'dashboard'"
-       routerLink="/delivery/all" routerLinkActive="active">배달음식</a>
+       routerLink="/delivery/{{locationId}}/all" routerLinkActive="active">배달음식</a>
     <a *ngIf="menu_set == 'dashboard'">학식메뉴</a>
 
     <a *ngIf="menu_set == 'btn_back'" (click)="goBack()">
@@ -14,5 +14,5 @@
       홈으로</a>
 
   </nav>
-  <img src="/app/Images/Interface/0_top_bar_logo.png" (click)="goHome()">
+  <img *ngIf="menu_set != 'select_location'" src="/app/Images/Interface/0_top_bar_logo.png" (click)="goHome()">
 </div>

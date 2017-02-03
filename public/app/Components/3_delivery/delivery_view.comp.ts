@@ -14,6 +14,7 @@ declare var $: any
 })
 
 export class DeliveryViewComponent implements OnInit {
+  locationId: string = '';
   top_bar_menu_set:string = "btn_back";
   delivery: Delivery;
   constructor(
@@ -25,6 +26,7 @@ export class DeliveryViewComponent implements OnInit {
     $.getScript('/app/Scripts/_sizer.js');
 
     this.activatedRoute.params.subscribe((params: Params) => {
+      this.locationId = params['location'];
       let id = params['id'];
       this.getDelivery(id);
 

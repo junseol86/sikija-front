@@ -24,15 +24,25 @@
 
   url = f('mongodb://%s:%s@133.130.103.96:27017/sikija?authMechanism=%s&authSource=%s', user, password, authMechanism, authSource);
 
-  router.get('/list/:category', function(req, res, next) {
-    var category, condition;
+  router.get('/list/:locationId/:category', function(req, res, next) {
+    var category, categoryCondition, condition, location;
     category = req.params.category;
-    condition = category === 'all' ? {} : {
+    location = Number(req.params.locationId);
+    categoryCondition = category === 'all' ? {} : {
       "category": {
         $in: [category]
       }
     };
-    console.log(category);
+    condition = {
+      $and: [
+        {
+          "locations": {
+            "$in": [location]
+          }
+        }, categoryCondition
+      ]
+    };
+    console.log(condition);
     return MongoClient.connect(url, function(err, db) {
       var delivery;
       assert.equal(null, err);

@@ -1,4 +1,4 @@
-<topBar [menu_set]="top_bar_menu_set"></topBar>
+<topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
 <div id="scroll_area" class="both">
   <div id="leaflet" *ngIf="delivery" [ngStyle]="{'background-image': 'url(\'app/Images/contents/delivery/' + delivery.id + '.jpg\')'}">
   </div>

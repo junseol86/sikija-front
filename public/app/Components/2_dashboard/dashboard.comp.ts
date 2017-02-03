@@ -1,19 +1,29 @@
 import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 declare var $: any
 
 @Component({
   moduleId: module.id,
   selector: 'dashboard',
   template: `
-    <topBar [menu_set]="top_bar_menu_set"></topBar>
+    <topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
     <h1>hahahaha</h1>
 `,
   styleUrls: ['../../Styles/2_dashboard.css'],
 })
 export class DashboardComponent implements OnInit {
+  locationId: string = '';
   top_bar_menu_set:string = "dashboard";
+
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
+
   ngOnInit(): void {
-    // $('#top_bar a').css('display', 'none');
-    // $('#top_bar a.top_bar_btn_dashboard').css('display', 'inline');
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.locationId = params['location'];
+
+      $.getScript('/app/Scripts/_sizer.js');
+    });
   }
 }

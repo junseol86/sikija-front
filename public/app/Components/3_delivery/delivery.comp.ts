@@ -14,7 +14,8 @@ declare var $: any
 })
 
 export class DeliveryComponent implements OnInit {
-  top_bar_menu_set:string = "btn_home";
+  locationId: string = '';
+  top_bar_menu_set: string = "btn_home";
   deliveries: Delivery[];
 
   constructor(
@@ -25,8 +26,9 @@ export class DeliveryComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
+      this.locationId = params['location'];
       let category = params['category'];
-      this.getDeliveries(category);
+      this.getDeliveries(this.locationId, category);
       $('.selected').removeClass('selected');
       $('#' + category).addClass('selected');
 
@@ -34,18 +36,18 @@ export class DeliveryComponent implements OnInit {
     });
   }
 
-  getDeliveries(category: string): void {
+  getDeliveries(location: string, category: string): void {
     this.deliveryService
-      .getDeliveries(category)
+      .getDeliveries(location, category)
       .then(deliveries => this.deliveries = deliveries);
   }
 
   selectCategory(category: string):void {
-    this.router.navigate(['/delivery/' + category])
+    this.router.navigate(['/delivery/' + this.locationId + '/' + category])
   }
 
   selectDelivery(id: string):void {
-    this.router.navigate(['/delivery/view/' + id])
+    this.router.navigate(['/delivery/' + this.locationId + '/view/' + id])
   }
 
 }

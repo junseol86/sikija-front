@@ -10,6 +10,7 @@ declare var $: any
   styleUrls: ['../../Styles/_top_bar.css'],
 })
 export class TopBarComponent implements OnInit {
+  @Input() locationId: string;
   @Input() menu_set: string;
   constructor(
     private router: Router,
@@ -20,7 +21,7 @@ export class TopBarComponent implements OnInit {
   }
 
   goHome(): void {
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/dashboard/' + this.locationId])
   }
   goBack(): void {
     this.location.back()

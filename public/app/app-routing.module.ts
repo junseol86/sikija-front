@@ -9,9 +9,9 @@ import { DeliveryViewComponent } from './Components/3_delivery/delivery_view.com
 const routes: Routes = [
   { path: '', redirectTo: '/location', pathMatch: 'full' },
   { path: 'location',  component: LocationComponent },
-  { path: 'dashboard',  component: DashboardComponent },
-  { path: 'delivery/:category',  component: DeliveryComponent },
-  { path: 'delivery/view/:id',  component: DeliveryViewComponent },
+  { path: 'dashboard/:location',  component: DashboardComponent },
+  { path: 'delivery/:location/:category',  component: DeliveryComponent },
+  { path: 'delivery/:location/view/:id',  component: DeliveryViewComponent },
 ];
 
 @NgModule({

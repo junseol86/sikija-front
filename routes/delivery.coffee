@@ -13,10 +13,12 @@ authSource = 'sikija'
 
 url = f('mongodb://%s:%s@133.130.103.96:27017/sikija?authMechanism=%s&authSource=%s', user, password, authMechanism, authSource);
 
-router.get '/list/:category', (req, res, next) ->
+router.get '/list/:locationId/:category', (req, res, next) ->
   category = req.params.category
-  condition = if category == 'all' then {} else {"category": {$in:[category]}}
-  console.log(category)
+  location = Number(req.params.locationId)
+  categoryCondition = if category == 'all' then {} else {"category": {$in:[category]}}
+  condition = { $and: [{"locations": {"$in": [location]}}, categoryCondition]}
+  console.log(condition)
   MongoClient.connect url, (err, db) ->
     assert.equal null, err
     delivery = db.collection 'delivery'

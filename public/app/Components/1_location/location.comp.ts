@@ -30,12 +30,11 @@ export class LocationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    alert(this.cookie.get("location"));
+    let location = this.cookie.get("location");
 
     this.getLocations();
 
     $.getScript('/app/Scripts/_sizer.js');
-    console.log(this.locations);
   }
 
   getLocations(): void {
@@ -44,8 +43,9 @@ export class LocationComponent implements OnInit {
       .then(locations => this.locations = locations);
   }
 
-  selectLocation(id: number): void {
-    this.cookie.put("location", id.toString());
+  selectLocation(locationId: number): void {
+    this.cookie.put("location", locationId.toString());
+    this.router.navigate(['/dashboard/' + locationId]);
   }
 
 }

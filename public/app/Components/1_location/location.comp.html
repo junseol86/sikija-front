@@ -1,4 +1,4 @@
-<topBar [menu_set]="top_bar_menu_set"></topBar>
+<topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
 <div id="scroll_area" class="vertical">
   <div class="location_item" *ngFor="let location of locations" (click)="selectLocation(location.id)">
     <span>{{location.name}}</span>
