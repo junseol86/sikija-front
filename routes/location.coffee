@@ -22,4 +22,13 @@ router.get '/list', (req, res, next) ->
       res.send {data: docs}
     db.close
 
+router.get '/view/:id', (req, res, next) ->
+  condition = {'id': Number(req.params.id)}
+  MongoClient.connect url, (err, db) ->
+    assert.equal null, err
+    delivery = db.collection 'location'
+    delivery.findOne condition, (err, docs) ->
+      res.send {data: docs}
+    db.close
+
 module.exports = router

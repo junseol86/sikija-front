@@ -1,6 +1,7 @@
 $sikija_color: tomato;
 $light_line_color: #EAEAEA;
 $sub_menu_bar_bg: #707070;
+$light_gray_bg: #eaeaea;
 
 * {
   box-sizing: border-box;
@@ -22,6 +23,10 @@ a {
   &:after {
     clear: both;
   }
+}
+
+._light_gray_bg {
+  background-color: $light_gray_bg;
 }
 
 #sub_menu_bar {

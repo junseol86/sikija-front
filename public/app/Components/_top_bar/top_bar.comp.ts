@@ -12,6 +12,7 @@ declare var $: any
 export class TopBarComponent implements OnInit {
   @Input() locationId: string;
   @Input() menu_set: string;
+  @Input() locationObj: Location;
   constructor(
     private router: Router,
     private location: Location

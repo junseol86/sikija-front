@@ -7,8 +7,14 @@
   <div id="snack" (click)="selectCategory('snack')">분식</div>
   <div id="pork" (click)="selectCategory('pork')">돈육</div>
 </div>
-<div id="scroll_area" class="vertical">
-  <div class="delivery_item" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
-    <span>{{delivery.name}}</span>
+<div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
+  <div id="scroll_height">
+    <div class="delivery_item" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
+      <span>{{delivery.name}}</span>
+    </div>
+
+    <div *ngIf="isMore == 1" id="loading_more">
+      <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+    </div>
   </div>
 </div>

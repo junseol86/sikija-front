@@ -56,6 +56,46 @@
     });
   });
 
+  router.get('/list/:locationId/:category/:offset', function(req, res, next) {
+    var category, categoryCondition, condition, location, offset, pageLimit;
+    pageLimit = 20;
+    category = req.params.category;
+    location = Number(req.params.locationId);
+    offset = req.params.offset;
+    categoryCondition = category === 'all' ? {} : {
+      "category": {
+        $in: [category]
+      }
+    };
+    condition = {
+      $and: [
+        {
+          "locations": {
+            "$in": [location]
+          }
+        }, categoryCondition
+      ]
+    };
+    return MongoClient.connect(url, function(err, db) {
+      var delivery;
+      assert.equal(null, err);
+      delivery = db.collection('delivery');
+      delivery.find(condition).count(function(err, count) {
+        var more;
+        more = (Number(offset) + 1) * Number(pageLimit) < Number(count) ? 1 : 0;
+        return delivery.find(condition).skip(pageLimit * offset).limit(pageLimit).toArray(function(err, docs) {
+          return res.send({
+            data: {
+              more: more,
+              delivery: docs
+            }
+          });
+        });
+      });
+      return db.close;
+    });
+  });
+
   router.get('/view/:id', function(req, res, next) {
     var condition;
     condition = {

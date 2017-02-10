@@ -1,9 +1,7 @@
 <div id="top_bar" class="_pos_rel">
   <nav>
     <a *ngIf="menu_set == 'select_location'">장소를 선택하세요.</a>
-    <a *ngIf="menu_set == 'dashboard'"
-       routerLink="/delivery/{{locationId}}/all" routerLinkActive="active">배달음식</a>
-    <a *ngIf="menu_set == 'dashboard'">학식메뉴</a>
+    <a *ngIf="menu_set == 'dashboard' && locationObj">[{{locationObj.region}}] {{locationObj.name}}</a>
 
     <a *ngIf="menu_set == 'btn_back'" (click)="goBack()">
       <i class="fa fa-arrow-left" aria-hidden="true"></i>

@@ -1,7 +1,6 @@
 <topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
 <div id="scroll_area" class="both">
-  <div id="leaflet" *ngIf="delivery" [ngStyle]="{'background-image': 'url(\'app/Images/contents/delivery/' + delivery.id + '.jpg\')'}">
-  </div>
+  <div id="leaflet" *ngIf="delivery" [ngStyle]="{'background-image': 'url(\'' + delivery.leaflet + '\')'}"></div>
 </div>
 <div id="bottom_bar" class="_float_con">
   <div id="call_btn" *ngIf="delivery" (click)="callNumber(delivery.phone)">

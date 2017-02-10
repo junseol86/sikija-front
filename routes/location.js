@@ -40,6 +40,24 @@
     });
   });
 
+  router.get('/view/:id', function(req, res, next) {
+    var condition;
+    condition = {
+      'id': Number(req.params.id)
+    };
+    return MongoClient.connect(url, function(err, db) {
+      var delivery;
+      assert.equal(null, err);
+      delivery = db.collection('location');
+      delivery.findOne(condition, function(err, docs) {
+        return res.send({
+          data: docs
+        });
+      });
+      return db.close;
+    });
+  });
+
   module.exports = router;
 
 }).call(this);

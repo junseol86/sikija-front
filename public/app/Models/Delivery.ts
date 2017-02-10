@@ -3,9 +3,19 @@
  */
 export class Delivery {
   _id: string;
-  id: number;
+  id: Number;
   category: string[];
-  locations: number[];
+  locations: Number[];
   name: string;
-  phone: string;
+  phone: string[];
+  leaflet: string[];
+}
+
+export class DeliveryAndMore {
+  more: Number;
+  deliveries: Delivery[];
+  constructor(more:Number, deliveries: Delivery[]) {
+    this.more = more;
+    this.deliveries = deliveries;
+  }
 }

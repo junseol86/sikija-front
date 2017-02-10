@@ -6,4 +6,5 @@ export class Location {
   id: number;
   name: string;
   short: string;
+  region: string;
 }

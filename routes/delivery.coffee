@@ -26,6 +26,23 @@ router.get '/list/:locationId/:category', (req, res, next) ->
       res.send {data: docs}
     db.close
 
+router.get '/list/:locationId/:category/:offset', (req, res, next) ->
+  pageLimit = 20
+  category = req.params.category
+  location = Number(req.params.locationId)
+  offset = req.params.offset
+  categoryCondition = if category == 'all' then {} else {"category": {$in:[category]}}
+  condition = { $and: [{"locations": {"$in": [location]}}, categoryCondition]}
+  MongoClient.connect url, (err, db) ->
+    assert.equal null, err
+    delivery = db.collection 'delivery'
+    delivery.find(condition).count (err, count) ->
+      #더 불러올 페이지가 있는지 확인
+      more = if (Number(offset) + 1) * Number(pageLimit) < Number(count) then 1 else 0
+      delivery.find(condition).skip(pageLimit * offset).limit(pageLimit).toArray (err, docs) ->
+        res.send {data: {more: more, delivery: docs}}
+    db.close
+
 router.get '/view/:id', (req, res, next) ->
   condition = {'id': Number(req.params.id)}
   MongoClient.connect url, (err, db) ->

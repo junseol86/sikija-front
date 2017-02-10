@@ -4,6 +4,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Delivery } from '../Models/Delivery';
+import { DeliveryAndMore } from '../Models/Delivery';
 
 @Injectable()
 export class DeliveryService {
@@ -13,11 +14,11 @@ export class DeliveryService {
   constructor(private http: Http) { }
 
   // Array 형태일때는 response.json() 뒤에 .data를 붙이지 않는다.
-  getDeliveries(location: string, category: string): Promise<Delivery[]> {
-    const url = `${this.deliveryUrl}/list/${location}/${category}`;
+  getDeliveries(location: string, category: string, offset: Number): Promise<DeliveryAndMore> {
+    const url = `${this.deliveryUrl}/list/${location}/${category}/${offset}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Delivery[])
+      .then(response => new DeliveryAndMore(response.json().data.more, response.json().data.delivery))
       .catch(this.handleError);
   }
 
