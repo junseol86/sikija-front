@@ -1,1 +1,49 @@
 @import "common";
+
+#scroll_height {
+  padding: 12px;
+  & > div {
+    margin-bottom: 12px;
+  }
+  & > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#delivery_or_restaurant {
+  text-align: center;
+  color: white;
+  & > div {
+    width: 50%;
+  }
+  & > div > div {
+    padding: 16px 0;
+  }
+  & img {
+    width: 90px;
+    height: 90px;
+  }
+  & #to_delivery {
+    padding-right: 4px;
+    & > div {
+      background-color: sandybrown;
+    }
+  }
+  & #to_restaurant {
+    padding-left: 4px;
+    & > div {
+      background-color: lightsteelblue;
+    }
+  }
+  & h1 {
+    margin: 2px;
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+}
+
+#to_inform {
+  background-color: white;
+  height: 80px;
+  border: 1px solid $light_gray_bg_border;
+}

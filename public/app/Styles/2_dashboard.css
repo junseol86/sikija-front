@@ -8,13 +8,15 @@ a {
 ._pos_rel {
   position: relative; }
 
-._float_con > * {
-  float: left; }
-._float_con:after {
-  clear: both; }
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con:after {
+    clear: both; }
 
 ._light_gray_bg {
-  background-color: #eaeaea; }
+  background-color: #efefef; }
 
 #sub_menu_bar {
   width: 100%;
@@ -33,5 +35,40 @@ a {
 #bottom_bar {
   height: 52px;
   background-color: tomato; }
+
+#scroll_height {
+  padding: 12px; }
+  #scroll_height > div {
+    margin-bottom: 12px; }
+  #scroll_height > div:last-child {
+    margin-bottom: 0; }
+
+#delivery_or_restaurant {
+  text-align: center;
+  color: white; }
+  #delivery_or_restaurant > div {
+    width: 50%; }
+  #delivery_or_restaurant > div > div {
+    padding: 16px 0; }
+  #delivery_or_restaurant img {
+    width: 90px;
+    height: 90px; }
+  #delivery_or_restaurant #to_delivery {
+    padding-right: 4px; }
+    #delivery_or_restaurant #to_delivery > div {
+      background-color: sandybrown; }
+  #delivery_or_restaurant #to_restaurant {
+    padding-left: 4px; }
+    #delivery_or_restaurant #to_restaurant > div {
+      background-color: lightsteelblue; }
+  #delivery_or_restaurant h1 {
+    margin: 2px;
+    font-size: 1.4em;
+    font-weight: bold; }
+
+#to_inform {
+  background-color: white;
+  height: 80px;
+  border: 1px solid #eaeaea; }
 
 /*# sourceMappingURL=2_dashboard.css.map */

@@ -8,13 +8,15 @@ a {
 ._pos_rel {
   position: relative; }
 
-._float_con > * {
-  float: left; }
-._float_con:after {
-  clear: both; }
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con:after {
+    clear: both; }
 
 ._light_gray_bg {
-  background-color: #eaeaea; }
+  background-color: #efefef; }
 
 #sub_menu_bar {
   width: 100%;
