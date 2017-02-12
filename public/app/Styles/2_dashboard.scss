@@ -20,19 +20,27 @@
     padding: 16px 0;
   }
   & img {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
   }
   & #to_delivery {
     padding-right: 4px;
     & > div {
-      background-color: sandybrown;
+      background-image: url('app/Images/Interface/to_delivery_bg.png');
+      background-size: cover;
+    }
+    &:active > div {
+      background: #ff7b40 none;
     }
   }
   & #to_restaurant {
     padding-left: 4px;
     & > div {
-      background-color: lightsteelblue;
+      background-image: url('app/Images/Interface/to_restaurant_bg.png');
+      background-size: cover;
+    }
+    &:active > div {
+      background: #6c93ff none;
     }
   }
   & h1 {

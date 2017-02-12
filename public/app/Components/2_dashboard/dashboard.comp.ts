@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Location } from '../../Models/Location'
@@ -18,6 +19,7 @@ export class DashboardComponent implements OnInit {
   locationObj: Location = null;
 
   constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private locationService: LocationService
   ) { }
@@ -35,6 +37,10 @@ export class DashboardComponent implements OnInit {
     this.locationService
       .getALocation(this.locationId)
       .then(location => this.locationObj = location);
+  }
+
+  toDelivery(): void {
+    this.router.navigate(['/delivery/' + this.locationId + '/all'])
   }
 
 }

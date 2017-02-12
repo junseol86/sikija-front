@@ -51,16 +51,22 @@ a {
   #delivery_or_restaurant > div > div {
     padding: 16px 0; }
   #delivery_or_restaurant img {
-    width: 90px;
-    height: 90px; }
+    width: 70px;
+    height: 70px; }
   #delivery_or_restaurant #to_delivery {
     padding-right: 4px; }
     #delivery_or_restaurant #to_delivery > div {
-      background-color: sandybrown; }
+      background-image: url("app/Images/Interface/to_delivery_bg.png");
+      background-size: cover; }
+    #delivery_or_restaurant #to_delivery:active > div {
+      background: #ff7b40 none; }
   #delivery_or_restaurant #to_restaurant {
     padding-left: 4px; }
     #delivery_or_restaurant #to_restaurant > div {
-      background-color: lightsteelblue; }
+      background-image: url("app/Images/Interface/to_restaurant_bg.png");
+      background-size: cover; }
+    #delivery_or_restaurant #to_restaurant:active > div {
+      background: #6c93ff none; }
   #delivery_or_restaurant h1 {
     margin: 2px;
     font-size: 1.4em;
