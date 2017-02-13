@@ -5,6 +5,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '../../Models/Location'
 import { LocationService } from '../../Services/location.service'
 
+import { DictionaryService } from '../../Services/dictionary.service'
+
 declare var $: any
 
 @Component({
@@ -17,11 +19,13 @@ export class DashboardComponent implements OnInit {
   locationId: string = '';
   top_bar_menu_set:string = "dashboard";
   locationObj: Location = null;
+  regionName: string = '';
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private dict: DictionaryService
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +40,12 @@ export class DashboardComponent implements OnInit {
   getALocation(): void {
     this.locationService
       .getALocation(this.locationId)
-      .then(location => this.locationObj = location);
+      .then(location => this.afterGetALocation(location));
+  }
+
+  afterGetALocation(location: Location): void {
+    this.locationObj = location;
+    this.regionName = this.dict.toKor(location.region);
   }
 
   toDelivery(): void {

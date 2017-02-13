@@ -24,38 +24,6 @@
 
   url = f('mongodb://%s:%s@133.130.103.96:27017/sikija?authMechanism=%s&authSource=%s', user, password, authMechanism, authSource);
 
-  router.get('/list/:locationId/:category', function(req, res, next) {
-    var category, categoryCondition, condition, location;
-    category = req.params.category;
-    location = Number(req.params.locationId);
-    categoryCondition = category === 'all' ? {} : {
-      "category": {
-        $in: [category]
-      }
-    };
-    condition = {
-      $and: [
-        {
-          "locations": {
-            "$in": [location]
-          }
-        }, categoryCondition
-      ]
-    };
-    console.log(condition);
-    return MongoClient.connect(url, function(err, db) {
-      var delivery;
-      assert.equal(null, err);
-      delivery = db.collection('delivery');
-      delivery.find(condition).toArray(function(err, docs) {
-        return res.send({
-          data: docs
-        });
-      });
-      return db.close;
-    });
-  });
-
   router.get('/list/:locationId/:category/:offset', function(req, res, next) {
     var category, categoryCondition, condition, location, offset, pageLimit;
     pageLimit = 20;

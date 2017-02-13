@@ -13,6 +13,7 @@ export class TopBarComponent implements OnInit {
   @Input() locationId: string;
   @Input() menu_set: string;
   @Input() locationObj: Location;
+  @Input() regionName: string;
   constructor(
     private router: Router,
     private location: Location
