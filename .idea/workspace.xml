@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="008f67e1-d3d2-48a2-95dc-9453daca4221" name="Default" comment="Location replaceState">
+    <list default="true" id="008f67e1-d3d2-48a2-95dc-9453daca4221" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_app.css" afterPath="$PROJECT_DIR$/public/app/Styles/0_app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_app.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/0_app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_intro.css" afterPath="$PROJECT_DIR$/public/app/Styles/0_intro.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_intro.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/0_intro.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/1_location.css" afterPath="$PROJECT_DIR$/public/app/Styles/1_location.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/1_location.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/1_location.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css" afterPath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.css" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/common.scss" afterPath="$PROJECT_DIR$/public/app/Styles/common.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -279,8 +267,8 @@
       <file leaf-file-name="top_bar.comp.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="380">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -861,7 +849,7 @@
       <workItem from="1486961643576" duration="11000" />
       <workItem from="1487003688972" duration="3620000" />
       <workItem from="1487123539363" duration="886000" />
-      <workItem from="1487130480845" duration="8353000" />
+      <workItem from="1487130480845" duration="8433000" />
     </task>
     <task id="LOCAL-00001" summary="Front parts">
       <created>1484375315995</created>
@@ -1003,11 +991,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487131406894</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Bottom button color change">
+      <created>1487141424361</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1487141424361</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167301000" />
+    <option name="totallyTimeSpent" value="167381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1103,7 +1098,8 @@
     <MESSAGE value="working on dashboard" />
     <MESSAGE value="working on dictionary" />
     <MESSAGE value="Location replaceState" />
-    <option name="LAST_COMMIT_MESSAGE" value="Location replaceState" />
+    <MESSAGE value="Bottom button color change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bottom button color change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1482,8 +1478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        <state relative-caret-position="380">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
