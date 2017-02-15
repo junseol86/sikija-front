@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/location', pathMatch: 'full' },
   { path: 'location',  component: LocationComponent },
   { path: 'dashboard/:location',  component: DashboardComponent },
-  { path: 'delivery/:location/:category',  component: DeliveryComponent },
+  { path: 'delivery/:location',  component: DeliveryComponent },
   { path: 'delivery/:location/view/:id',  component: DeliveryViewComponent },
 ];
 

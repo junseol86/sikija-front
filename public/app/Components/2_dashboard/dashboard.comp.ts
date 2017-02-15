@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
   }
 
   toDelivery(): void {
-    this.router.navigate(['/delivery/' + this.locationId + '/all'])
+    this.router.navigate(['/delivery/' + this.locationId])
   }
 
 }

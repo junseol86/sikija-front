@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import {Delivery, DeliveryAndMore} from '../../Models/Delivery'
 import { DeliveryService } from '../../Services/delivery.service'
+import { Location } from '@angular/common'
 
 declare var $: any
 
@@ -24,13 +25,14 @@ export class DeliveryComponent implements OnInit {
   constructor(
     private router: Router,
     private deliveryService: DeliveryService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
-      this.categoryId = params['category'];
+      this.categoryId = 'all';
       this.getDeliveries(this.locationId, this.categoryId);
       $('.selected').removeClass('selected');
       $('#' + this.categoryId).addClass('selected');
@@ -63,7 +65,10 @@ export class DeliveryComponent implements OnInit {
     this.isMore = 1;
     this.offset = 0;
     this.deliveries = [];
-    this.router.navigate(['/delivery/' + this.locationId + '/' + category]);
+    this.categoryId = category;
+    this.getDeliveries(this.locationId, this.categoryId);
+    $('.selected').removeClass('selected');
+    $('#' + this.categoryId).addClass('selected');
   }
 
   selectDelivery(id: string):void {
