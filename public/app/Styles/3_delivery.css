@@ -42,13 +42,17 @@ a {
     background-color: white; }
 
 .delivery_item {
-  padding: 0px 16px 0px 16px;
-  height: 52px;
+  padding: 20px 16px 18px 16px;
   border-bottom: 1px solid #EAEAEA; }
+  .delivery_item.tall {
+    padding-top: 14px;
+    padding-bottom: 12px; }
   .delivery_item:active {
     background-color: #efefef; }
-  .delivery_item > span {
-    line-height: 54px; }
+  .delivery_item .delivery_desc {
+    margin-top: 2px;
+    color: #aaaaaa;
+    font-size: 0.9em; }
 
 #loading_more {
   color: tomato;

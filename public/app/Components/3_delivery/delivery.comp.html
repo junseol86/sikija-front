@@ -9,8 +9,9 @@
 </div>
 <div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
   <div id="scroll_height">
-    <div class="delivery_item" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
-      <span>{{delivery.name}}</span>
+    <div class="delivery_item {{delivery.desc == '' ? 'short' : 'tall'}}" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
+      <div class="delivery_name">{{delivery.name}}</div>
+      <div *ngIf="delivery.desc != ''" class="delivery_desc">{{delivery.desc}}</div>
     </div>
 
     <div *ngIf="isMore == 1" id="loading_more">
