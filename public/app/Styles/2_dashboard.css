@@ -34,7 +34,12 @@ a {
 
 #bottom_bar {
   height: 52px;
-  background-color: tomato; }
+  background-color: #efefef;
+  border-top: 1px solid #cdcdcd;
+  box-sizing: border-box;
+  color: #555555; }
+  #bottom_bar:active {
+    background-color: white; }
 
 #scroll_height {
   padding: 12px; }
