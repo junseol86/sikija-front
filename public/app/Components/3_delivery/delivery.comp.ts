@@ -16,7 +16,7 @@ declare var $: any
 
 export class DeliveryComponent implements OnInit {
   offset = 0;
-  isMore:Number = 1;
+  isMore:Number = 2;
   locationId: string = '';
   categoryId: string = '';
   top_bar_menu_set: string = "btn_home";
@@ -53,7 +53,7 @@ export class DeliveryComponent implements OnInit {
   }
 
   whenReachedBottom() {
-    if (this.isMore == 1) {
+    if (this.isMore > 0) {
       if($('#scroll_area').scrollTop() + $('#scroll_area').height() == $('#scroll_height').height()) {
         this.offset++;
         this.getDeliveries(this.locationId, this.categoryId);
@@ -62,7 +62,7 @@ export class DeliveryComponent implements OnInit {
   }
 
   selectCategory(category: string):void {
-    this.isMore = 1;
+    this.isMore = 2;
     this.offset = 0;
     this.deliveries = [];
     this.categoryId = category;

@@ -18,6 +18,9 @@ a {
 ._light_gray_bg {
   background-color: #efefef; }
 
+._gray_bg {
+  background-color: #bfbfbf; }
+
 #sub_menu_bar {
   width: 100%;
   height: 44px;

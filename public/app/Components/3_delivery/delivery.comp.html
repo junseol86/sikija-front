@@ -13,9 +13,11 @@
       <div class="delivery_name">{{delivery.name}}</div>
       <div *ngIf="delivery.desc != ''" class="delivery_desc">{{delivery.desc}}</div>
     </div>
-
-    <div *ngIf="isMore == 1" id="loading_more">
+    <div *ngIf="isMore == 2" class="loading_more">
       <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+    </div>
+    <div *ngIf="isMore == 1" class="loading_more">
+      Loading...
     </div>
   </div>
 </div>

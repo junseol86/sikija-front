@@ -10,7 +10,7 @@
     prntW = parent.width()
     prntH = parent.height()
 
-    imgSrc = child.css('background-image').replace('url("', '').replace('")', '')
+    imgSrc = child.attr 'data-bgsrc'
     imageOrg = new Image()
     imageOrg.src = imgSrc
     imageOrg.onload = () ->
@@ -30,5 +30,6 @@
       child.css 'width', newW + 'px'
       child.css 'height', newH + 'px'
       child.css 'background-size', newW + 'px ' + newH + 'px'
+      child.css 'background-image', 'url("' + imgSrc + '")'
 
 }

@@ -52,4 +52,8 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/delivery/' + this.locationId])
   }
 
+  toRestaurant(): void {
+    this.router.navigate(['/restaurant/' + this.locationId])
+  }
+
 }

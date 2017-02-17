@@ -2,6 +2,7 @@ $sikija_color: tomato;
 $light_line_color: #EAEAEA;
 $sub_menu_bar_bg: #707070;
 $light_gray_bg: #efefef;
+$gray_bg: #bfbfbf;
 $light_gray_bg_border: #eaeaea;
 
 * {
@@ -29,6 +30,10 @@ a {
 
 ._light_gray_bg {
   background-color: $light_gray_bg;
+}
+
+._gray_bg {
+  background-color: $gray_bg;
 }
 
 #sub_menu_bar {
