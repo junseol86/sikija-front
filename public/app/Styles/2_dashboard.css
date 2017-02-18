@@ -21,6 +21,9 @@ a {
 ._gray_bg {
   background-color: #bfbfbf; }
 
+._dark_gray_bg {
+  background-color: #808080; }
+
 #sub_menu_bar {
   width: 100%;
   height: 44px;
@@ -34,6 +37,12 @@ a {
     overflow-x: scroll; }
   #scroll_area.both {
     overflow: scroll; }
+
+.loading_more {
+  color: tomato;
+  background-color: white;
+  text-align: center;
+  padding: 20px; }
 
 #bottom_bar {
   height: 52px;

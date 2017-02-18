@@ -19,5 +19,9 @@
     <div *ngIf="isMore == 1" class="loading_more">
       Loading...
     </div>
+    <div *ngIf="isMore == 0 && deliveries.length == 0" class="loading_more">
+      <i class="fa fa-ban" aria-hidden="true"></i>
+      등록된 배달업체가 없습니다.
+    </div>
   </div>
 </div>

@@ -16,6 +16,7 @@ import { DeliveryComponent } from './Components/3_delivery/delivery.comp'
 import { DeliveryViewComponent } from './Components/3_delivery/delivery_view.comp'
 import { RestaurantComponent } from './Components/4_restaurant/restaurant.comp'
 import { DeliveryService } from './Services/delivery.service'
+import { RestaurantService } from './Services/restaurant.service'
 import { DictionaryService } from './Services/dictionary.service'
 import {HttpModule} from "@angular/http";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
@@ -24,7 +25,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
   imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
   declarations: [ AppComponent, TopBarComponent,
     LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, LocationService, DictionaryService,
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, LocationService, DictionaryService,
     CookieService],
   bootstrap:    [ AppComponent ]
 })

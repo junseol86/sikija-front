@@ -34,8 +34,8 @@ export class DeliveryComponent implements OnInit {
       this.locationId = params['location'];
       this.categoryId = 'all';
       this.getDeliveries(this.locationId, this.categoryId);
-      $('.selected').removeClass('selected');
-      $('#' + this.categoryId).addClass('selected');
+      // $('.selected').removeClass('selected');
+      // $('#' + this.categoryId).addClass('selected');
 
       $.getScript('/app/Scripts/_sizer.js');
     });

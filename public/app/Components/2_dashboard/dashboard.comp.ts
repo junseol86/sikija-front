@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
   afterGetALocation(location: Location): void {
     this.locationObj = location;
-    this.regionName = this.dict.toKor(location.region);
+    this.regionName = this.dict.regionKor(location.region);
   }
 
   toDelivery(): void {

@@ -10,3 +10,12 @@ export class Restaurant {
   name: string;
   links: string[]
 }
+
+export class RestaurantAndMore {
+  more: Number;
+  restaurants: Restaurant[];
+  constructor(more:Number, restaurants: Restaurant[]) {
+    this.more = more;
+    this.restaurants = restaurants;
+  }
+}

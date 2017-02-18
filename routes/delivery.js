@@ -51,7 +51,9 @@
       delivery.find(condition).count(function(err, count) {
         var more;
         more = (Number(offset) + 1) * Number(pageLimit) < Number(count) ? 1 : 0;
-        return delivery.find(condition).skip(pageLimit * offset).limit(pageLimit).toArray(function(err, docs) {
+        return delivery.find(condition).sort({
+          name: 1
+        }).skip(pageLimit * offset).limit(pageLimit).toArray(function(err, docs) {
           return res.send({
             data: {
               more: more,

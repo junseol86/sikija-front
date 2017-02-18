@@ -4,19 +4,52 @@
 
 export class DictionaryService {
 
-  toKor(eng: string): string {
-    let result =  this.dictionary[eng];
+  regionKor(eng: string): string {
+    let result =  this.region[eng];
     return result == undefined ? eng : result;
   }
 
-  dictionary = {
+  dongKor(eng: string): string {
+    let result =  this.dong[eng];
+    return result == undefined ? eng : result;
+  }
+
+  delCatKor(eng: string): string {
+    let result =  this.delCategory[eng];
+    return result == undefined ? eng : result;
+  }
+
+  resCatKor(eng: string): string {
+    let result =  this.resCategory[eng];
+    return result == undefined ? eng : result;
+  }
+
+  region = {
     pohang: '포항',
     kyungju: '경주',
-    yangdeokdong: '양덕동',
+  };
+
+  dong = {
+    deoksandong: '덕산동',
+    duhodong: '두호동',
+    hwanhodong: '환호동',
     jangseongdong: '장성동',
+    jukdodong: '죽도동',
+    uhyeondong: '우현동',
+    yangdeokdong: '양덕동',
+  }
+
+  delCategory = {
     korean: '한식',
     japanese: '일식',
     snack: '분식',
     fusion: '퓨전'
-  };
+  }
+
+  resCategory = {
+    korean: '한식',
+    japanese: '일식',
+    snack: '분식',
+    fusion: '퓨전'
+  }
 }

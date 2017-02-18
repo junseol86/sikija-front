@@ -3,6 +3,7 @@ $light_line_color: #EAEAEA;
 $sub_menu_bar_bg: #707070;
 $light_gray_bg: #efefef;
 $gray_bg: #bfbfbf;
+$dark_gray_bg: #808080;
 $light_gray_bg_border: #eaeaea;
 
 * {
@@ -36,6 +37,10 @@ a {
   background-color: $gray_bg;
 }
 
+._dark_gray_bg {
+  background-color: $dark_gray_bg;
+}
+
 #sub_menu_bar {
   width: 100%;
   height: 44px;
@@ -53,6 +58,13 @@ a {
   &.both {
     overflow: scroll;
   }
+}
+
+.loading_more {
+  color: $sikija_color;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 #bottom_bar {

@@ -1,0 +1,21 @@
+@import "common";
+
+#sub_menu_bar {
+  & > div {
+    width: 50%;
+    height: 100%;
+    padding: 0 12px;
+  }
+  & select {
+    height: 100%;
+    line-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background-color: $sub_menu_bar_bg;
+    color: white;
+  }
+}

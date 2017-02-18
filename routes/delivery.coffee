@@ -39,7 +39,7 @@ router.get '/list/:locationId/:category/:offset', (req, res, next) ->
     delivery.find(condition).count (err, count) ->
       #더 불러올 페이지가 있는지 확인
       more = if (Number(offset) + 1) * Number(pageLimit) < Number(count) then 1 else 0
-      delivery.find(condition).skip(pageLimit * offset).limit(pageLimit).toArray (err, docs) ->
+      delivery.find(condition).sort({name:1}).skip(pageLimit * offset).limit(pageLimit).toArray (err, docs) ->
         res.send {data: {more: more, delivery: docs}}
     db.close
 
