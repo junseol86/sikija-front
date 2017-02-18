@@ -4,18 +4,31 @@
   & > div {
     width: 50%;
     height: 100%;
+    line-height: 100%;
     padding: 0 12px;
+    color: white;
   }
   & select {
     height: 100%;
-    line-height: 100%;
-    width: 100%;
+    color: white;
+    font-size: 1em;
     box-sizing: border-box;
     border: 0;
     outline: none;
     margin: 0;
     padding: 0;
     background-color: $sub_menu_bar_bg;
-    color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.restaurant_item {
+  padding: 20px 16px 18px 16px;
+  border-bottom: 1px solid $light_line_color;
+  & .restaurant_info {
+    font-size: 0.9em;
+    color: #808080;
+    margin-bottom: 2px;
   }
 }

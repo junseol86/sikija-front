@@ -41,15 +41,20 @@ export class DictionaryService {
 
   delCategory = {
     korean: '한식',
+    chinese: '중식',
     japanese: '일식',
     snack: '분식',
-    fusion: '퓨전'
+    fusion: '퓨전',
   }
 
   resCategory = {
     korean: '한식',
+    chinese: '중식',
     japanese: '일식',
+    western: '양식',
+    world: '세계',
     snack: '분식',
-    fusion: '퓨전'
+    fusion: '퓨전',
+    meat: '고기',
   }
 }

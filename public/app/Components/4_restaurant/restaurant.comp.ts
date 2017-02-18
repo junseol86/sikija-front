@@ -62,6 +62,15 @@ export class RestaurantComponent implements OnInit {
     this.restaurants = this.restaurants.concat(restaurantAndMore.restaurants);
   }
 
+  whenReachedBottom() {
+    if (this.isMore > 0) {
+      if($('#scroll_area').scrollTop() + $('#scroll_area').height() == $('#scroll_height').height()) {
+        this.offset++;
+        this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+      }
+    }
+  }
+
   selectRestaurant(id: string):void {
 
   }

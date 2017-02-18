@@ -2,20 +2,26 @@
 <div id="sub_menu_bar" class="_float_con">
   <div>
     <select>
-      <option value="all">모든 동네</option>
+      <option value="all">모든 동네 </option>
       <option *ngFor="let key of dongs" value="dongKey">{{dictionary.dongKor(key)}}</option>
     </select>
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
   </div>
   <div>
     <select>
-      <option value="all">모든 음식</option>
+      <option value="all">모든 음식 </option>
       <option *ngFor="let key of resCategories" value="dongKey">{{dictionary.resCatKor(key)}}</option>
     </select>
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
   </div>
 </div>
 <div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
   <div id="scroll_height">
     <div class="restaurant_item" *ngFor="let restaurant of restaurants" (click)="selectRestaurant(restaurant.id)">
+      <div class="restaurant_info">
+        {{dictionary.dongKor(restaurant.dong)}} ·
+        <span *ngFor="let category of restaurant.category">{{dictionary.resCatKor(category)}} </span>
+      </div>
       <div class="restaurant_name">{{restaurant.name}}</div>
     </div>
   </div>
