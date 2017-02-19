@@ -54,7 +54,7 @@ export class DeliveryComponent implements OnInit {
 
   whenReachedBottom() {
     if (this.isMore > 0) {
-      if($('#scroll_area').scrollTop() + $('#scroll_area').height() == $('#scroll_height').height()) {
+      if($('#scroll_area').scrollTop() + $('#scroll_area').height() > $('#scroll_height').height() - 50) {
         this.offset++;
         this.getDeliveries(this.locationId, this.categoryId);
       }

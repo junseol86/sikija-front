@@ -45,6 +45,7 @@ export class DictionaryService {
     japanese: '일식',
     snack: '분식',
     fusion: '퓨전',
+    fastfood: '패스트푸드',
   }
 
   resCategory = {
@@ -56,5 +57,6 @@ export class DictionaryService {
     snack: '분식',
     fusion: '퓨전',
     meat: '고기',
+    fastfood: '패스트푸드',
   }
 }

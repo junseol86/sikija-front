@@ -9,7 +9,7 @@ export class Delivery {
   name: string;
   phone: string[];
   leaflet: string[];
-  desc: string;
+  desc: Object;
 }
 
 export class DeliveryAndMore {
