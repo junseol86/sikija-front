@@ -1,4 +1,6 @@
 express = require 'express'
+request = require 'request'
+cheerio = require 'cheerio'
 router = express.Router();
 
 MongoClient = require('mongodb').MongoClient
@@ -22,13 +24,10 @@ router.get '/list/:location/:dong/:category/:offset', (req, res, next) ->
   offset = req.params.offset
   MongoClient.connect url, (err, db) ->
 
-    console.log(locationId)
     location = db.collection 'location'
     #    해당하는 location이 속한 지역을 알아낸다
     location.findOne {id: locationId}, (err, docs) ->
-      console.log(docs)
       region = docs.region
-      console.log region
       dongCondition = if dong == 'all' then {} else {'dong': dong}
       categoryCondition = if category == 'all' then {} else {"category": {$in:[category]}}
       condition = { $and: [{'region': region}, dongCondition, categoryCondition]}
@@ -41,5 +40,27 @@ router.get '/list/:location/:dong/:category/:offset', (req, res, next) ->
           res.send {data: {more: more, restaurant: docs}}
     db.close
 
+
+router.get '/view/:restaurant', (req, res, next) ->
+  restaurantId = Number(req.params.restaurant)
+
+  MongoClient.connect url, (err, db) ->
+    restaurant = db.collection 'restaurant'
+    restaurant.findOne {id: restaurantId}, (err, docs) ->
+      links = docs.links
+      linksCount = links.length
+      linkObjs = []
+
+      for link in links
+        do (link) ->
+          request link, (err, response, body) ->
+            $ = cheerio.load(body)
+            title =  $('title').text()
+            obj = {'link': link, 'title': title}
+            linkObjs.push obj
+            if linkObjs.length == linksCount
+              docs['link_n_title']=linkObjs
+              res.send {data: docs}
+        db.close
 
 module.exports = router
