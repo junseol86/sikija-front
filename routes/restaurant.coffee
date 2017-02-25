@@ -1,6 +1,8 @@
 express = require 'express'
 request = require 'request'
 cheerio = require 'cheerio'
+iconv  = require 'iconv-lite'
+iconv.skipDecodeWarning = true
 router = express.Router();
 
 MongoClient = require('mongodb').MongoClient
@@ -53,8 +55,12 @@ router.get '/view/:restaurant', (req, res, next) ->
 
       for link in links
         do (link) ->
-          request link, (err, response, body) ->
-            $ = cheerio.load(body)
+          request {method:'GET', uri:link, encoding:null}, (err, response, body) ->
+#            $ = cheerio.load(body)
+            $ = cheerio.load(iconv.decode(body, 'euc-kr'))
+            charset =  $('meta[http-equiv="Content-type"]').attr('content')
+            if charset != undefined && charset.indexOf('utf-8') > -1
+              $ = cheerio.load(iconv.decode(body, 'utf-8'))
             title =  $('title').text()
             obj = {'link': link, 'title': title}
             linkObjs.push obj
