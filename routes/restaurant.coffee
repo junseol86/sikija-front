@@ -56,11 +56,17 @@ router.get '/view/:restaurant', (req, res, next) ->
       for link in links
         do (link) ->
           request {method:'GET', uri:link, encoding:null}, (err, response, body) ->
-#            $ = cheerio.load(body)
             $ = cheerio.load(iconv.decode(body, 'euc-kr'))
-            charset =  $('meta[http-equiv="Content-type"]').attr('content')
-            if charset != undefined && charset.indexOf('utf-8') > -1
-              $ = cheerio.load(iconv.decode(body, 'utf-8'))
+            $('meta').each (idx, obj) ->
+              metaContent = $(obj).attr('content')
+              metaCharset = $(obj).attr('charset')
+              console.log metaCharset
+              if (metaContent != undefined && metaContent.indexOf('MS949') > -1) || (metaCharset != undefined && metaCharset.indexOf('MS949') > -1)
+                $ = cheerio.load(iconv.decode(body, 'MS949'))
+              if (metaContent != undefined && metaContent.indexOf('utf-8') > -1) || (metaCharset != undefined && metaCharset.indexOf('utf-8') > -1)
+                $ = cheerio.load(iconv.decode(body, 'utf-8'))
+              if (metaContent != undefined && metaContent.indexOf('UTF-8') > -1) || (metaCharset != undefined && metaCharset.indexOf('UTF-8') > -1)
+                $ = cheerio.load(iconv.decode(body, 'utf-8'))
             title =  $('title').text()
             obj = {'link': link, 'title': title}
             linkObjs.push obj

@@ -102,12 +102,23 @@
             uri: link,
             encoding: null
           }, function(err, response, body) {
-            var $, charset, obj, title;
+            var $, obj, title;
             $ = cheerio.load(iconv.decode(body, 'euc-kr'));
-            charset = $('meta[http-equiv="Content-type"]').attr('content');
-            if (charset !== void 0 && charset.indexOf('utf-8') > -1) {
-              $ = cheerio.load(iconv.decode(body, 'utf-8'));
-            }
+            $('meta').each(function(idx, obj) {
+              var metaCharset, metaContent;
+              metaContent = $(obj).attr('content');
+              metaCharset = $(obj).attr('charset');
+              console.log(metaCharset);
+              if ((metaContent !== void 0 && metaContent.indexOf('MS949') > -1) || (metaCharset !== void 0 && metaCharset.indexOf('MS949') > -1)) {
+                $ = cheerio.load(iconv.decode(body, 'MS949'));
+              }
+              if ((metaContent !== void 0 && metaContent.indexOf('utf-8') > -1) || (metaCharset !== void 0 && metaCharset.indexOf('utf-8') > -1)) {
+                $ = cheerio.load(iconv.decode(body, 'utf-8'));
+              }
+              if ((metaContent !== void 0 && metaContent.indexOf('UTF-8') > -1) || (metaCharset !== void 0 && metaCharset.indexOf('UTF-8') > -1)) {
+                return $ = cheerio.load(iconv.decode(body, 'utf-8'));
+              }
+            });
             title = $('title').text();
             obj = {
               'link': link,
