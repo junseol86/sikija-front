@@ -32,3 +32,61 @@
     margin-bottom: 2px;
   }
 }
+
+#restaurant_info {
+  padding: 20px;
+  border-bottom: 1px solid $light_gray_bg_border;
+  background-color: $lightest_gray_bg;
+  & > #cat_and_dong {
+    text-align: center;
+    & > span {
+      margin: 0 8px;
+      color: #808080;
+      & > i {
+        color: $sikija_color;
+        opacity: 0.67;
+      }
+    }
+  }
+  & > #name {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+    & > i {
+      color: #dedede;
+      margin: 0 4px;
+    }
+  }
+}
+
+#linkObjs {
+  margin: 12px 20px;
+  & > div {
+    padding: 20px 16px;
+    border-bottom: 1px solid #eaeaea;
+    & > h1 {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 6px;
+      & > i {
+        color: $sikija_color;
+        opacity: 0.67;
+        margin-right: 4px;
+      }
+    }
+    & > .link {
+      overflow: hidden;
+      color: #808080;
+    }
+  }
+  & > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+#restaurant_detail_loading {
+  text-align: center;
+  color: $sikija_color;
+  padding-top: 20px;
+}

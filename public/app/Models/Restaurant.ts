@@ -8,7 +8,18 @@ export class Restaurant {
   region: string;
   dong: string;
   name: string;
-  links: string[]
+  links: string[];
+}
+
+export class RestaurantDetail {
+  _id: string;
+  id: Number;
+  category: string[];
+  region: string;
+  dong: string;
+  name: string;
+  links: string[];
+  link_n_title: Object[];
 }
 
 export class RestaurantAndMore {

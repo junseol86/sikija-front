@@ -2,6 +2,7 @@ $sikija_color: tomato;
 $light_line_color: #EAEAEA;
 $sub_menu_bar_bg: #707070;
 $light_gray_bg: #efefef;
+$lightest_gray_bg: #fafafa;
 $gray_bg: #bfbfbf;
 $dark_gray_bg: #808080;
 $light_gray_bg_border: #eaeaea;
@@ -23,6 +24,9 @@ a {
   overflow: hidden;
   & > * {
     float: left;
+  }
+  & > ._f_right {
+    float: right;
   }
   &:after {
     clear: both;

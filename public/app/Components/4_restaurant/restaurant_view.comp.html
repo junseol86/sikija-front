@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
+<div *ngIf="!restaurantDetail" id="restaurant_detail_loading">
+  <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+</div>
+<div id="scroll_area" class="vertical" *ngIf="restaurantDetail">
+  <div id="restaurant_info">
+    <div id="cat_and_dong">
+      <span>
+        <i class="fa fa-flag" aria-hidden="true"></i>
+        {{resCategory}}
+      </span>
+      <span>
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        {{resDong}}
+      </span>
+    </div>
+    <div id="name">
+      <i class="fa fa-quote-left" aria-hidden="true"></i>
+      {{restaurantDetail.name}}
+      <i class="fa fa-quote-right" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div id="linkObjs">
+    <div *ngFor="let linkObj of restaurantDetail.link_n_title" (click)="goToLink(linkObj.link)">
+      <h1>
+        <i class="fa fa-link" aria-hidden="true"></i>
+        {{linkObj.title}}
+      </h1>
+      <div class="link">{{linkObj.link}}</div>
+    </div>
+  </div>
 
-</body>
-</html>
+</div>

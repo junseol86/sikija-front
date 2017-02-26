@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Restaurant } from '../Models/Restaurant';
+import {Restaurant, RestaurantDetail} from '../Models/Restaurant';
 import { RestaurantAndMore } from '../Models/Restaurant';
 
 @Injectable()
@@ -23,11 +23,11 @@ export class RestaurantService {
   }
 
 
-  getRestaurant(id: number): Promise<Restaurant> {
+  getRestaurant(id: number): Promise<RestaurantDetail> {
     const url = `${this.restaurantUrl}/view/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Restaurant)
+      .then(response => response.json().data as RestaurantDetail)
       .catch(this.handleError);
   }
 

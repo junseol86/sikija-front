@@ -72,6 +72,7 @@ export class RestaurantComponent implements OnInit {
   }
 
   selectRestaurant(id: string):void {
-
+    this.router.navigate(['/restaurant/view/' + id]);
   }
+
 }

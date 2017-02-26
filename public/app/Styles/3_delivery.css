@@ -12,6 +12,8 @@ a {
   overflow: hidden; }
   ._float_con > * {
     float: left; }
+  ._float_con > ._f_right {
+    float: right; }
   ._float_con:after {
     clear: both; }
 

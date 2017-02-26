@@ -12,6 +12,8 @@ a {
   overflow: hidden; }
   ._float_con > * {
     float: left; }
+  ._float_con > ._f_right {
+    float: right; }
   ._float_con:after {
     clear: both; }
 
@@ -79,5 +81,50 @@ a {
     font-size: 0.9em;
     color: #808080;
     margin-bottom: 2px; }
+
+#restaurant_info {
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #fafafa; }
+  #restaurant_info > #cat_and_dong {
+    text-align: center; }
+    #restaurant_info > #cat_and_dong > span {
+      margin: 0 8px;
+      color: #808080; }
+      #restaurant_info > #cat_and_dong > span > i {
+        color: tomato;
+        opacity: 0.67; }
+  #restaurant_info > #name {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px; }
+    #restaurant_info > #name > i {
+      color: #dedede;
+      margin: 0 4px; }
+
+#linkObjs {
+  margin: 12px 20px; }
+  #linkObjs > div {
+    padding: 20px 16px;
+    border-bottom: 1px solid #eaeaea; }
+    #linkObjs > div > h1 {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 6px; }
+      #linkObjs > div > h1 > i {
+        color: tomato;
+        opacity: 0.67;
+        margin-right: 4px; }
+    #linkObjs > div > .link {
+      overflow: hidden;
+      color: #808080; }
+  #linkObjs > div:last-child {
+    border-bottom: 0; }
+
+#restaurant_detail_loading {
+  text-align: center;
+  color: tomato;
+  padding-top: 20px; }
 
 /*# sourceMappingURL=4_restaurant.css.map */

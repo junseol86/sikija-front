@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common'
 import { DictionaryService } from '../../Services/dictionary.service'
-import {Restaurant, RestaurantAndMore} from "../../Models/Restaurant";
+import {Restaurant, RestaurantAndMore, RestaurantDetail} from "../../Models/Restaurant";
 import { RestaurantService } from "../../Services/restaurant.service"
 
 declare var $: any
@@ -17,11 +17,13 @@ declare var $: any
   styleUrls: ['../../Styles/4_restaurant.css'],
 })
 
-export class RestaurantComponent implements OnInit {
+export class RestaurantViewComponent implements OnInit {
   restaurantId = '';
+  top_bar_menu_set:string = "btn_back";
   dictionary: DictionaryService;
-  dong: string[] = null;
-  resCategory: string[] = null;
+  restaurantDetail: RestaurantDetail;
+  resDong: string;
+  resCategory: string[] = [];
 
   constructor(
     private router: Router,
@@ -31,10 +33,37 @@ export class RestaurantComponent implements OnInit {
     private restaurantService: RestaurantService
   ) {
     this.dictionary = dict;
-    this.dong = Object.keys(dict.dong);
-    this.resCategory = Object.keys(dict.resCategory);
   }
 
   ngOnInit():void {
+    $.getScript('/app/Scripts/_sizer.js');
+
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.restaurantId = params['id'];
+      this.getRestaurant(Number(this.restaurantId));
+    });
+
   }
+
+
+  getRestaurant(id: number):void {
+    this.restaurantService
+      .getRestaurant(id)
+      .then(restaurantDetail => this.afterGettingRestaurant(restaurantDetail));
+  }
+
+  afterGettingRestaurant(resDetail: RestaurantDetail) {
+    this.restaurantDetail = resDetail;
+    this.resDong = this.dict.dongKor(this.restaurantDetail.dong);
+    this.resCategory = [];
+    for (var i = 0; i < this.restaurantDetail.category.length; i++) {
+      this.resCategory.push(this.dict.resCatKor(this.restaurantDetail.category[i]));
+    }
+    $.getScript('/app/Scripts/_sizer.js');
+  }
+
+  goToLink(link:string) {
+    window.open(link, '_blank');
+  }
+
 }
