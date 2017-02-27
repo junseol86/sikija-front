@@ -96,4 +96,12 @@ a {
   height: 80px;
   border: 1px solid #eaeaea; }
 
+#create_icon {
+  background-color: tomato;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  font-size: 1.2em;
+  color: white; }
+
 /*# sourceMappingURL=2_dashboard.css.map */

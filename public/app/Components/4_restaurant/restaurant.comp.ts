@@ -71,6 +71,22 @@ export class RestaurantComponent implements OnInit {
     }
   }
 
+  selectDong():void {
+    this.isMore = 2;
+    this.offset = 0;
+    this.restaurants = [];
+    this.dongId = $('#dong_select').val();
+    this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+  }
+
+  selectCategory():void {
+    this.isMore = 2;
+    this.offset = 0;
+    this.restaurants = [];
+    this.categoryId = $('#category_select').val();
+    this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+  }
+
   selectRestaurant(id: string):void {
     this.router.navigate(['/restaurant/view/' + id]);
   }

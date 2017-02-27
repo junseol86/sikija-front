@@ -56,4 +56,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/restaurant/' + this.locationId])
   }
 
+  createIcon():void {
+  }
+
 }
