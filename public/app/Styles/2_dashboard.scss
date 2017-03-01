@@ -57,10 +57,35 @@
 }
 
 #create_icon {
-  background-color: $sikija_color;
-  height: 52px;
-  line-height: 52px;
-  text-align: center;
-  font-size: 1.2em;
-  color: white;
+  & > div:first-child {
+    background-color: $sikija_color;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+  }
+  & > div:last-child {
+    background-color: white;
+    padding: 20px;
+    line-height: 24px;
+    & > h1 {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    & > span {
+      color: $sikija_color;
+    }
+    & > img {
+      vertical-align: bottom;
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
+

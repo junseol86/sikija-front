@@ -96,12 +96,29 @@ a {
   height: 80px;
   border: 1px solid #eaeaea; }
 
-#create_icon {
+#create_icon > div:first-child {
   background-color: tomato;
   height: 52px;
   line-height: 52px;
   text-align: center;
   font-size: 1.2em;
   color: white; }
+#create_icon > div:last-child {
+  background-color: white;
+  padding: 20px;
+  line-height: 24px; }
+  #create_icon > div:last-child > h1 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 4px; }
+    #create_icon > div:last-child > h1:first-child {
+      margin-top: 0; }
+  #create_icon > div:last-child > span {
+    color: tomato; }
+  #create_icon > div:last-child > img {
+    vertical-align: bottom;
+    width: 24px;
+    height: 24px; }
 
 /*# sourceMappingURL=2_dashboard.css.map */
