@@ -7,7 +7,7 @@ declare var $: any
   moduleId: module.id,
   selector: 'topBar',
   templateUrl: 'top_bar.comp.html',
-  styleUrls: ['../../Styles/_top_bar.css'],
+  styleUrls: ['../../Styles/0_top_bar.css'],
 })
 export class TopBarComponent implements OnInit {
   @Input() locationId: string;
