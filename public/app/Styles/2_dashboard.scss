@@ -66,6 +66,7 @@
     color: white;
   }
   & > div:last-child {
+    display: none;
     background-color: white;
     padding: 20px;
     line-height: 24px;

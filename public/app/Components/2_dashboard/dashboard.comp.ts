@@ -56,7 +56,16 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/restaurant/' + this.locationId])
   }
 
-  createIcon():void {
+  createIconToggle():void {
+    let c_i_desc = $('#create_icon > div:last-child');
+    if (c_i_desc.css('display') == 'none') {
+      c_i_desc.show();
+      $('#scroll_area').animate({
+        scrollTop: c_i_desc.offset().top + 'px'
+      }, 'fast');
+    }
+    else
+      c_i_desc.hide();
   }
 
 }
