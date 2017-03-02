@@ -106,7 +106,7 @@ a {
 #create_icon > div:last-child {
   display: none;
   background-color: white;
-  padding: 20px;
+  padding: 16px 16px 0 16px;
   line-height: 24px; }
   #create_icon > div:last-child > h1 {
     font-size: 1.1em;
@@ -121,5 +121,13 @@ a {
     vertical-align: bottom;
     width: 24px;
     height: 24px; }
+  #create_icon > div:last-child > div {
+    height: 44px;
+    line-height: 44px;
+    text-align: right;
+    margin-top: 12px;
+    border-top: 1px solid #efefef; }
+    #create_icon > div:last-child > div i {
+      color: #808080; }
 
 /*# sourceMappingURL=2_dashboard.css.map */
