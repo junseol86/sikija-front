@@ -50,15 +50,27 @@
   }
 }
 
-#to_inform {
+#building_chat {
   background-color: white;
-  height: 80px;
-  border: 1px solid $light_gray_bg_border;
+  border: 1px solid #e6e6e6;
+  color: #555555;
+  & img {
+    width: 80px;
+    height: 80px;
+  }
+  td:first-child {
+    padding-left: 8px;
+  }
+  td:last-child {
+    vertical-align: middle;
+    padding: 0 20px 0 12px;
+  }
+  margin-bottom: 12px;
 }
 
 #create_icon {
   & > div:first-child {
-    background-color: $sikija_color;
+    background-color: $sikija_color_light;
     height: 52px;
     line-height: 52px;
     text-align: center;

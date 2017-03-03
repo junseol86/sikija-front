@@ -91,13 +91,22 @@ a {
     font-size: 1.4em;
     font-weight: bold; }
 
-#to_inform {
+#building_chat {
   background-color: white;
-  height: 80px;
-  border: 1px solid #eaeaea; }
+  border: 1px solid #e6e6e6;
+  color: #555555;
+  margin-bottom: 12px; }
+  #building_chat img {
+    width: 80px;
+    height: 80px; }
+  #building_chat td:first-child {
+    padding-left: 8px; }
+  #building_chat td:last-child {
+    vertical-align: middle;
+    padding: 0 20px 0 12px; }
 
 #create_icon > div:first-child {
-  background-color: tomato;
+  background-color: #ff7a57;
   height: 52px;
   line-height: 52px;
   text-align: center;
