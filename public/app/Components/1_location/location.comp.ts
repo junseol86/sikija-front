@@ -33,7 +33,6 @@ export class LocationComponent implements OnInit {
     let location = this.cookie.get("location");
 
     this.getLocations();
-
     $.getScript('/app/Scripts/_sizer.js');
   }
 
@@ -45,7 +44,7 @@ export class LocationComponent implements OnInit {
 
   selectLocation(locationId: number): void {
     this.cookie.put("location", locationId.toString());
-    this.router.navigate(['/dashboard/' + locationId]);
+    this.router.navigate(['/dashboard/' + locationId], {replaceUrl: true});
   }
 
 }

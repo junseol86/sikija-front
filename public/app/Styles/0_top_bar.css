@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+._pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > ._f_right {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._light_gray_bg {
+  background-color: #efefef; }
+
+._gray_bg {
+  background-color: #bfbfbf; }
+
+._dark_gray_bg {
+  background-color: #808080; }
+
+#sub_menu_bar {
+  width: 100%;
+  height: 44px;
+  background-color: #707070; }
+
+#scroll_area {
+  overflow: hidden; }
+  #scroll_area.vertical {
+    overflow-y: scroll; }
+  #scroll_area.horizontal {
+    overflow-x: scroll; }
+  #scroll_area.both {
+    overflow: scroll; }
+
+.loading_more {
+  color: tomato;
+  background-color: white;
+  text-align: center;
+  padding: 20px; }
+
+#bottom_bar {
+  height: 52px;
+  background-color: #efefef;
+  border-top: 1px solid #cdcdcd;
+  box-sizing: border-box;
+  color: #555555; }
+  #bottom_bar:active {
+    background-color: white; }
+
+#top_bar {
+  height: 56px;
+  background-color: tomato; }
+  #top_bar > img {
+    position: absolute;
+    right: 8px;
+    top: 0px;
+    width: 85px;
+    height: 56px; }
+  #top_bar > nav > a {
+    line-height: 56px;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 16px; }
+
+/*# sourceMappingURL=0_top_bar.css.map */

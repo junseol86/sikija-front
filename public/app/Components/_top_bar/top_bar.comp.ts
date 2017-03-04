@@ -28,4 +28,9 @@ export class TopBarComponent implements OnInit {
   goBack(): void {
     this.location.back()
   }
+
+  toLocationSelect(): void {
+    this.router.navigate(['location'], {replaceUrl:true})
+  }
+
 }
