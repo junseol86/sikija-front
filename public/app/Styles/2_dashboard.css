@@ -18,7 +18,7 @@ a {
     clear: both; }
 
 ._light_gray_bg {
-  background-color: #efefef; }
+  background-color: #eae; }
 
 ._gray_bg {
   background-color: #bfbfbf; }
@@ -104,43 +104,82 @@ a {
     vertical-align: middle;
     padding: 0 20px 0 12px; }
 
-#jobs_section #jobs_bar {
-  background-color: #40b4ff;
-  color: white;
-  height: 44px;
-  line-height: 44px;
-  padding: 0 12px; }
-  #jobs_section #jobs_bar > span {
-    font-size: 1.2em;
-    font-weight: bold; }
-  #jobs_section #jobs_bar > div {
-    margin: 0 8px;
-    height: 52px; }
-#jobs_section #jobs {
+#editors_restaurant {
   background-color: white; }
-  #jobs_section #jobs > div {
-    padding: 16px;
-    border-bottom: 1px solid #eaeaea; }
-    #jobs_section #jobs > div:last-child {
-      border-bottom: 0; }
-    #jobs_section #jobs > div > div:first-child {
-      color: #808080;
-      font-size: 0.9em;
-      margin-bottom: 2px; }
-      #jobs_section #jobs > div > div:first-child #work_area {
+  #editors_restaurant > #title {
+    height: 44px;
+    line-height: 46px;
+    padding: 0 12px;
+    font-size: 1.2em; }
+    #editors_restaurant > #title i {
+      color: tomato; }
+  #editors_restaurant > #image {
+    height: 240px; }
+    #editors_restaurant > #image > div {
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      bottom: 0px;
+      height: 48px;
+      line-height: 50px;
+      font-size: 1.2em;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center; }
+      #editors_restaurant > #image > div i {
+        opacity: 0.5; }
+
+#jobs_section {
+  background-color: white; }
+  #jobs_section #jobs_bar {
+    border-bottom: 2px solid #40b4ff;
+    height: 44px;
+    line-height: 46px;
+    padding: 0 12px; }
+    #jobs_section #jobs_bar > span {
+      font-size: 1.2em; }
+      #jobs_section #jobs_bar > span > span {
         color: #40b4ff;
-        margin-right: 8px; }
-  #jobs_section #jobs #jobs_loading {
+        font-weight: bold;
+        font-size: 0.8em; }
+    #jobs_section #jobs_bar > div {
+      margin: 0 8px;
+      height: 52px; }
+  #jobs_section #jobs {
+    background-color: white; }
+    #jobs_section #jobs > div {
+      padding: 16px;
+      border-bottom: 1px solid #eaeaea;
+      color: #555555; }
+      #jobs_section #jobs > div:last-child {
+        border-bottom: 0; }
+      #jobs_section #jobs > div > div:first-child {
+        color: #808080;
+        font-size: 0.9em;
+        margin-bottom: 2px; }
+        #jobs_section #jobs > div > div:first-child #work_area {
+          color: #40b4ff;
+          margin-right: 8px; }
+    #jobs_section #jobs #jobs_loading {
+      text-align: center;
+      color: tomato;
+      padding: 8px; }
+  #jobs_section #tutoring {
+    border-top: 1px dashed #40b4ff;
+    padding: 14px;
     text-align: center;
-    color: tomato;
-    padding: px; }
-#jobs_section #tutoring {
-  border-top: 1px dashed #40b4ff;
-  padding: 14px;
-  text-align: center;
-  background-color: white; }
-  #jobs_section #tutoring > i {
-    color: #bfbfbf; }
+    background-color: white; }
+    #jobs_section #tutoring > i {
+      color: #bfbfbf; }
+
+#to_modoo {
+  background-color: white;
+  height: 48px;
+  line-height: 50px;
+  padding: 0 12px;
+  font-size: 1.1em; }
+  #to_modoo i {
+    color: tomato; }
 
 #create_icon > div:first-child {
   background-color: #ff7a57;

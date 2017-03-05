@@ -30,3 +30,10 @@ export class RestaurantAndMore {
     this.restaurants = restaurants;
   }
 }
+
+export class RestaurantForDashboard {
+  _id: string;
+  id: Number;
+  image: string;
+  desc: string;
+}

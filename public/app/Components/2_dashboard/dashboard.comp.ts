@@ -4,10 +4,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Location } from '../../Models/Location'
 import { LocationService } from '../../Services/location.service'
-import { JobService } from '../../Services/job.service'
+import { DashboardService } from '../../Services/dashboard.service'
 
 import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
+import {RestaurantForDashboard} from "../../Models/Restaurant"
 
 declare var $: any
 
@@ -23,22 +24,25 @@ export class DashboardComponent implements OnInit {
   locationObj: Location = null;
   regionName: string = '';
   jobs: Job[] = [];
+  restaurants: RestaurantForDashboard[] = [];
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private locationService: LocationService,
-    private jobService: JobService,
+    private dashboardService: DashboardService,
     private dict: DictionaryService
   ) { }
 
   ngOnInit(): void {
+    $.getScript('/app/Scripts/_sizer.js');
+    $.getScript('/app/Scripts/_image_processor.js');
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
       this.getALocation();
       this.getJobs();
+      this.getRestaurants();
 
-      $.getScript('/app/Scripts/_sizer.js');
     });
   }
 
@@ -74,16 +78,29 @@ export class DashboardComponent implements OnInit {
   }
 
   getJobs(): void {
-    this.jobService
+    this.dashboardService
       .getJobs().then(jobs => this.afterGettingJobs(jobs));
   }
-
   afterGettingJobs(jobs: Job[]): void {
     this.jobs = jobs.slice(0, 3);
   }
 
+  getRestaurants(): void {
+    this.dashboardService
+      .getRestaurants().then(restaurants => this.afterGettingRestaurants(restaurants));
+  }
+  afterGettingRestaurants(restaurants: RestaurantForDashboard[]):void {
+    this.restaurants = restaurants;
+    console.log(this.restaurants);
+    $.getScript('/app/Scripts/2_dashboard_restaurant.js');
+  }
+
   linkTo(link: string) {
     window.open(link, '_blank');
+  }
+
+  selectRestaurant(id: string):void {
+    this.router.navigate(['/restaurant/view/' + id]);
   }
 
 }
