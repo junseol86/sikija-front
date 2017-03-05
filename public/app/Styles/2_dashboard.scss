@@ -68,6 +68,60 @@
   margin-bottom: 12px;
 }
 
+#jobs_section {
+  & #jobs_bar {
+    background-color: $ddjob_color;
+    color: white;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 12px;
+
+    & > span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    & > div {
+      margin: 0 8px;
+      height: 52px;
+    }
+  }
+
+  & #jobs {
+    background-color: white;
+    & > div {
+      padding: 16px;
+      border-bottom: 1px solid #eaeaea;
+      &:last-child {
+        border-bottom: 0;
+      }
+      & > div:first-child {
+        color: #808080;
+        font-size: 0.9em;
+        margin-bottom: 2px;
+        & #work_area {
+          color:$ddjob_color;
+          margin-right: 8px;
+        }
+      }
+    }
+    & #jobs_loading {
+      text-align: center;
+      color: $sikija_color;
+      padding: 8px;
+    }
+  }
+
+  & #tutoring {
+    border-top: 1px dashed $ddjob_color;
+    padding: 14px;
+    text-align: center;
+    background-color: white;
+    & > i {
+      color: #bfbfbf;
+    }
+  }
+}
+
 #create_icon {
   & > div:first-child {
     background-color: $sikija_color_light;

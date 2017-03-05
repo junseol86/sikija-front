@@ -8,9 +8,9 @@
 
   router = express.Router();
 
-  router.get('/jobs/:regionCode', function(req, res, next) {
+  router.get('/jobs', function(req, res, next) {
     var link;
-    link = 'http://job.ddhouse.co.kr/api/job/new?area=@&theme='.replace('@', req.params.regionCode);
+    link = 'http://job.ddhouse.co.kr/api/job/new?area=&theme=';
     return request({
       method: 'GET',
       uri: link,

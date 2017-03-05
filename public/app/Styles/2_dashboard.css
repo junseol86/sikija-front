@@ -104,6 +104,44 @@ a {
     vertical-align: middle;
     padding: 0 20px 0 12px; }
 
+#jobs_section #jobs_bar {
+  background-color: #40b4ff;
+  color: white;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 12px; }
+  #jobs_section #jobs_bar > span {
+    font-size: 1.2em;
+    font-weight: bold; }
+  #jobs_section #jobs_bar > div {
+    margin: 0 8px;
+    height: 52px; }
+#jobs_section #jobs {
+  background-color: white; }
+  #jobs_section #jobs > div {
+    padding: 16px;
+    border-bottom: 1px solid #eaeaea; }
+    #jobs_section #jobs > div:last-child {
+      border-bottom: 0; }
+    #jobs_section #jobs > div > div:first-child {
+      color: #808080;
+      font-size: 0.9em;
+      margin-bottom: 2px; }
+      #jobs_section #jobs > div > div:first-child #work_area {
+        color: #40b4ff;
+        margin-right: 8px; }
+  #jobs_section #jobs #jobs_loading {
+    text-align: center;
+    color: tomato;
+    padding: px; }
+#jobs_section #tutoring {
+  border-top: 1px dashed #40b4ff;
+  padding: 14px;
+  text-align: center;
+  background-color: white; }
+  #jobs_section #tutoring > i {
+    color: #bfbfbf; }
+
 #create_icon > div:first-child {
   background-color: #ff7a57;
   height: 52px;

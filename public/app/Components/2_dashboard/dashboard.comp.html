@@ -28,19 +28,36 @@
       </tr>
     </table>
 
+    <div id="jobs_section">
+      <div id="jobs_bar" class="_float_con">
+        <span>일하자!</span>
+        <div class="_f_right" (click)="linkTo('http://job.ddhouse.co.kr')"><i class="fa fa-plus" aria-hidden="true"></i> 더보기</div>
+      </div>
+      <div id="jobs">
+        <div *ngIf="jobs == []" id="jobs_loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+        </div>
+        <div *ngFor="let job of jobs" (click)="linkTo(job.link.toString())">
+          <div><span id="work_area">{{job.work_area}}</span> <span>{{job.company_name}}</span></div>
+          <div>{{job.title}}</div>
+        </div>
+      </div>
+      <div id="tutoring" (click)="linkTo('http://job.ddhouse.co.kr/private-lesson')"><i class="fa fa-address-card-o" aria-hidden="true"></i> 과외광고 올리기</div>
+    </div>
+
     <div id="create_icon" (click)="createIcon()">
       <div (click)="createIconToggle()">
         <i class="fa fa-lg fa-mobile" aria-hidden="true"></i>
         홈 화면에 아이콘 추가
       </div>
       <div>
-        <h1>안드로이드: 인터넷 앱 또는 크롬에서</h1>
+        <h1><i class="fa fa-android" aria-hidden="true"></i> 안드로이드: 인터넷 앱 또는 크롬에서</h1>
         화면 우측 상단의<img src="/app/Images/Interface/c_i_android.png">버튼을 누르고 <span>홈 화면에 추가</span>를 누르세요.
 
-        <h1>안드로이드: 네이버 앱에서</h1>
+        <h1><i class="fa fa-android" aria-hidden="true"></i> 안드로이드: 네이버 앱에서</h1>
         화면 우측 하단의 <img src="/app/Images/Interface/c_i_naver.png">버튼을 누르고 <span>홈 화면 추가</span>를 누르세요.
 
-        <h1>아이폰에서</h1>
+        <h1><i class="fa fa-apple" aria-hidden="true"></i> 아이폰에서</h1>
         <span>사파리</span>에서 접속(시키자.com) 후 툴바의 <img src="/app/Images/Interface/c_i_iphone.png"> 버튼을 누른 뒤 <span><i class="fa fa-plus-square" aria-hidden="true"></i> 홈 화면에 추가</span>를 누르세요.
 
         <div>

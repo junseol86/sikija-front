@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
       this.getALocation();
-      this.getJobs('AG3');
+      this.getJobs();
 
       $.getScript('/app/Scripts/_sizer.js');
     });
@@ -73,13 +73,17 @@ export class DashboardComponent implements OnInit {
       c_i_desc.hide();
   }
 
-  getJobs(regionCode: string): void {
+  getJobs(): void {
     this.jobService
-      .getJobs(regionCode).then(jobs => this.afterGettingJobs(jobs));
+      .getJobs().then(jobs => this.afterGettingJobs(jobs));
   }
 
   afterGettingJobs(jobs: Job[]): void {
-    this.jobs = jobs;
+    this.jobs = jobs.slice(0, 3);
+  }
+
+  linkTo(link: string) {
+    window.open(link, '_blank');
   }
 
 }
