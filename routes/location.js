@@ -59,9 +59,7 @@
   });
 
   router.get('/from_wicam', function(req, res, next) {
-    return res.render('index', {
-      title: '위캠'
-    });
+    return res.send("<!DOCTYPE html>\n<html>\n  <head>\n    <title>위캠</title>\n    <meta name=\"viewport\" content=\"user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width\">\n    <style>\n      body {\n        padding: 24px;\n        }\n      button {\n        width: 100%;\n        background-color: tomato;\n        color:white;\n        font-size: 1.5em;\n        padding: 40px; 0px;\n        border: 0;\n        outline: 0;\n        border-radius: 24px;\n        margin-bottom: 12px;\n        }\n    </style>\n  </head>\n  <body>\n    <div>\n      <button onclick=\"window.open('http://시키자.com', '_blank');\">시키자.com으로 이동</button><br>\n      <span>위캠에서 동작하지 않을 시 인터넷 앱에서 한글주소 [시키자.com]으로 접속하세요.</span>\n    </div>\n  </body>\n  <script>\n    window.open('http://시키자.com', '_blank');\n  </script>\n</html>");
   });
 
   module.exports = router;
