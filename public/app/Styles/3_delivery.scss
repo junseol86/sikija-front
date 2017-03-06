@@ -1,5 +1,15 @@
 @import "common";
 
+#update_notice {
+  padding: 12px;
+  border-bottom: 1px solid #b5c9ff;
+
+  #inform_delivery {
+    margin-top: 4px;
+    color: #6c93ff;
+  }
+}
+
 .delivery_item {
   padding: 20px 16px 18px 16px;
   border-bottom: 1px solid $light_line_color;

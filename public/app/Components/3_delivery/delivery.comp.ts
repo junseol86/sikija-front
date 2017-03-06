@@ -75,4 +75,8 @@ export class DeliveryComponent implements OnInit {
     this.router.navigate(['/delivery/' + this.locationId + '/view/' + id]);
   }
 
+  linkTo(link: string) {
+    window.open(link, '_blank');
+  }
+
 }

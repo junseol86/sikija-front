@@ -91,4 +91,8 @@ export class RestaurantComponent implements OnInit {
     this.router.navigate(['/restaurant/view/' + id]);
   }
 
+  linkTo(link: string) {
+    window.open(link, '_blank');
+  }
+
 }
