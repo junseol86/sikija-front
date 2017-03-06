@@ -6,4 +6,5 @@ router.get '/', (req, res, next) ->
     title: 'Express'
   }
 
+
 module.exports = router

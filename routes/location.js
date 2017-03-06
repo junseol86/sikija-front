@@ -58,6 +58,12 @@
     });
   });
 
+  router.get('/from_wicam', function(req, res, next) {
+    return res.render('from_wicam', {
+      title: '위캠'
+    });
+  });
+
   module.exports = router;
 
 }).call(this);

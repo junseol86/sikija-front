@@ -31,4 +31,10 @@ router.get '/view/:id', (req, res, next) ->
       res.send {data: docs}
     db.close
 
+router.get '/from_wicam', (req, res, next) ->
+  res.render 'from_wicam', {
+    title: '위캠'
+  }
+
+
 module.exports = router
