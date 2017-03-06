@@ -18,7 +18,7 @@ a {
     clear: both; }
 
 ._light_gray_bg {
-  background-color: #eae; }
+  background-color: #eaeaea; }
 
 ._gray_bg {
   background-color: #bfbfbf; }
@@ -158,8 +158,9 @@ a {
         font-size: 0.9em;
         margin-bottom: 2px; }
         #jobs_section #jobs > div > div:first-child #work_area {
-          color: #40b4ff;
           margin-right: 8px; }
+        #jobs_section #jobs > div > div:first-child i {
+          color: #40b4ff; }
     #jobs_section #jobs #jobs_loading {
       text-align: center;
       color: tomato;
@@ -214,5 +215,7 @@ a {
     border-top: 1px solid #efefef; }
     #create_icon > div:last-child > div i {
       color: #808080; }
+  #create_icon > div:last-child #not_wicam_i {
+    color: tomato; }
 
 /*# sourceMappingURL=2_dashboard.css.map */

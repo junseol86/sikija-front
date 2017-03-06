@@ -135,8 +135,10 @@
         font-size: 0.9em;
         margin-bottom: 2px;
         & #work_area {
-          color:$ddjob_color;
           margin-right: 8px;
+        }
+        & i {
+          color:$ddjob_color;
         }
       }
     }
@@ -209,6 +211,9 @@
       & i {
         color: #808080;
       }
+    }
+    & #not_wicam_i {
+      color: $sikija_color;
     }
   }
 }

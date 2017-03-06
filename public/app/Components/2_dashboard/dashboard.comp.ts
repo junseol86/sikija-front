@@ -70,7 +70,7 @@ export class DashboardComponent implements OnInit {
     if (c_i_desc.css('display') == 'none') {
       c_i_desc.show();
       $('#scroll_area').animate({
-        scrollTop: c_i_desc.offset().top + 'px'
+        scrollTop: $('#scroll_height').height() + 'px'
       }, 'fast');
     }
     else
@@ -91,7 +91,6 @@ export class DashboardComponent implements OnInit {
   }
   afterGettingRestaurants(restaurants: RestaurantForDashboard[]):void {
     this.restaurants = restaurants;
-    console.log(this.restaurants);
     $.getScript('/app/Scripts/2_dashboard_restaurant.js');
   }
 
