@@ -59,7 +59,7 @@
   });
 
   router.get('/from_wicam', function(req, res, next) {
-    return res.render('from_wicam', {
+    return res.render('index', {
       title: '위캠'
     });
   });

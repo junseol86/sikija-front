@@ -32,7 +32,7 @@ router.get '/view/:id', (req, res, next) ->
     db.close
 
 router.get '/from_wicam', (req, res, next) ->
-  res.render 'from_wicam', {
+  res.render 'index', {
     title: '위캠'
   }
 
