@@ -51,6 +51,7 @@
 }
 
 #building_chat {
+  width: 100%;
   background-color: white;
   //border: 1px solid #e6e6e6;
   color: #555555;
@@ -147,6 +148,22 @@
       color: $sikija_color;
       padding: 8px;
     }
+  }
+  .video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video_container iframe,
+  .video_container object,
+  .video_container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   & #tutoring {
