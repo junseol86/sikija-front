@@ -76,7 +76,8 @@ a {
 
 #update_notice {
   padding: 12px;
-  border-bottom: 1px solid #b5c9ff; }
+  border-bottom: 1px solid #b5c9ff;
+  background-color: #eaeaea; }
   #update_notice #inform_restaurant {
     margin-top: 4px;
     color: #6c93ff; }
