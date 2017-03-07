@@ -196,6 +196,8 @@ a {
   #to_modoo i {
     color: tomato; }
 
+#create_icon #open_internet_app {
+  color: #6c93ff; }
 #create_icon > div:first-child {
   background-color: #ff7a57;
   height: 52px;

@@ -189,6 +189,9 @@
 }
 
 #create_icon {
+  & #open_internet_app {
+    color: #6c93ff;
+  }
   & > div:first-child {
     background-color: $sikija_color_light;
     height: 52px;
