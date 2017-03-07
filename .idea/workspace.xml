@@ -3,11 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="008f67e1-d3d2-48a2-95dc-9453daca4221" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html" afterPath="$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.html" afterPath="$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css" afterPath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_app.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/0_app.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_intro.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/0_intro.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/0_top_bar.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/0_top_bar.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/1_location.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/1_location.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/2_dashboard.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/2_dashboard.scss" afterPath="$PROJECT_DIR$/public/app/Styles/2_dashboard.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.css" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" afterPath="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/4_restaurant.css" afterPath="$PROJECT_DIR$/public/app/Styles/4_restaurant.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/4_restaurant.css.map" afterPath="$PROJECT_DIR$/public/app/Styles/4_restaurant.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/4_restaurant.scss" afterPath="$PROJECT_DIR$/public/app/Styles/4_restaurant.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/Styles/common.scss" afterPath="$PROJECT_DIR$/public/app/Styles/common.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,11 +46,21 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="dashboard.comp.html" pinned="false" current-in-tab="true">
+                <file leaf-file-name="dashboard.comp.html" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="346">
-                        <caret line="65" column="11" lean-forward="false" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+                      <state relative-caret-position="209">
+                        <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+                        <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="dictionary.service.js" pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/public/app/Services/dictionary.service.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="418">
+                        <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
                         <folding />
                       </state>
                     </provider>
@@ -106,8 +123,8 @@
                 <file leaf-file-name="common.scss" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/public/app/Styles/common.scss">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="95">
-                        <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+                      <state relative-caret-position="114">
+                        <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
                         <folding />
                       </state>
                     </provider>
@@ -123,7 +140,7 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="2_dashboard.scss" pinned="false" current-in-tab="true">
+                <file leaf-file-name="2_dashboard.scss" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/public/app/Styles/2_dashboard.scss">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="246">
@@ -143,11 +160,11 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="3_delivery.scss" pinned="false" current-in-tab="false">
+                <file leaf-file-name="3_delivery.scss" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/public/app/Styles/3_delivery.scss">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="95">
-                        <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+                        <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
                         <folding />
                       </state>
                     </provider>
@@ -156,8 +173,8 @@
                 <file leaf-file-name="4_restaurant.scss" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/public/app/Styles/4_restaurant.scss">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="-39">
-                        <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+                      <state relative-caret-position="532">
+                        <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
                         <folding />
                       </state>
                     </provider>
@@ -228,7 +245,7 @@
       <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/Styles/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-89">
+            <state relative-caret-position="106">
               <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
               <folding />
             </state>
@@ -348,7 +365,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/Scripts/0_app.coffee" />
         <option value="$PROJECT_DIR$/public/app/Scripts/_dictionary.coffee" />
         <option value="$PROJECT_DIR$/public/app/dictionary.ts" />
         <option value="$PROJECT_DIR$/public/app/Components/3_delivery/delivery_view.comp.ts" />
@@ -378,7 +394,6 @@
         <option value="$PROJECT_DIR$/public/app/Models/Restaurant.ts" />
         <option value="$PROJECT_DIR$/public/app/Scripts/2_dashboard_restaurant.coffee" />
         <option value="$PROJECT_DIR$/public/app/Scripts/_image_processor.coffee" />
-        <option value="$PROJECT_DIR$/public/app/Styles/common.scss" />
         <option value="$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.ts" />
         <option value="$PROJECT_DIR$/public/app/app.component.ts" />
         <option value="$PROJECT_DIR$/public/app/Components/1_location/fromwicam.comp.ts" />
@@ -392,13 +407,15 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/app/Components/4_restaurant/restaurant.comp.ts" />
         <option value="$PROJECT_DIR$/public/app/Components/3_delivery/delivery.comp.ts" />
-        <option value="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" />
-        <option value="$PROJECT_DIR$/public/app/Styles/4_restaurant.scss" />
         <option value="$PROJECT_DIR$/public/app/Components/4_restaurant/restaurant.comp.html" />
         <option value="$PROJECT_DIR$/public/app/Components/3_delivery/delivery.comp.html" />
         <option value="$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.html" />
         <option value="$PROJECT_DIR$/public/app/Styles/2_dashboard.scss" />
         <option value="$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html" />
+        <option value="$PROJECT_DIR$/public/app/Services/dictionary.service.js" />
+        <option value="$PROJECT_DIR$/public/app/Styles/common.scss" />
+        <option value="$PROJECT_DIR$/public/app/Styles/3_delivery.scss" />
+        <option value="$PROJECT_DIR$/public/app/Styles/4_restaurant.scss" />
       </list>
     </option>
   </component>
@@ -598,7 +615,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1073,6 +1089,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1256,14 +1273,8 @@
       <workItem from="1488819680942" duration="1870000" />
       <workItem from="1488844378067" duration="1378000" />
       <workItem from="1488847315577" duration="124000" />
-      <workItem from="1488851644411" duration="445000" />
-    </task>
-    <task id="LOCAL-00007" summary="Delivery, filtering working on">
-      <created>1485269524553</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1485269524553</updated>
+      <workItem from="1488851644411" duration="467000" />
+      <workItem from="1488906327472" duration="972000" />
     </task>
     <task id="LOCAL-00008" summary="Delivery, filtering working on">
       <created>1485276408215</created>
@@ -1601,11 +1612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488847401971</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="open in internet app">
+      <created>1488852106958</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1488852106959</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310266000" />
+    <option name="totallyTimeSpent" value="311260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1620,7 +1638,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2733189" sideWeight="0.42963752" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1696,8 +1714,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small fix" />
-    <MESSAGE value="Image Working On" />
     <MESSAGE value="After loading problem solved!" />
     <MESSAGE value="Working on Locations" />
     <MESSAGE value="Working on setting cookies" />
@@ -1721,7 +1737,9 @@
     <MESSAGE value="Dashboard elaborating" />
     <MESSAGE value="Design modify" />
     <MESSAGE value="Spellings &amp; vocabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spellings &amp; vocabs" />
+    <MESSAGE value="open in internet app" />
+    <MESSAGE value="add category" />
+    <option name="LAST_COMMIT_MESSAGE" value="add category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1735,13 +1753,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/Styles/0_app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/Scripts/2_dashboard_restaurant.xsl" />
     <entry file="file://$PROJECT_DIR$/public/app/Scripts/3_delivery.coffee">
       <provider selected="true" editor-type-id="text-editor">
@@ -1839,7 +1850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2031,10 +2041,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="143" lean-forward="false" selection-start-line="3" selection-start-column="143" selection-end-line="3" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/Styles/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/Styles/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="114">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -2047,38 +2081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Styles/0_top_bar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Styles/3_delivery.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Components/_top_bar/top_bar.comp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="143" lean-forward="false" selection-start-line="3" selection-start-column="143" selection-end-line="3" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Styles/4_restaurant.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/Styles/2_dashboard.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -2087,18 +2089,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Styles/common.css">
+    <entry file="file://$PROJECT_DIR$/public/app/Styles/0_top_bar.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/Components/2_dashboard/dashboard.comp.html">
+    <entry file="file://$PROJECT_DIR$/public/app/Styles/4_restaurant.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="65" column="11" lean-forward="false" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+        <state relative-caret-position="532">
+          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/Styles/3_delivery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/Services/dictionary.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
       </provider>
