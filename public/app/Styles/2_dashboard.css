@@ -58,7 +58,9 @@ a {
 #scroll_height {
   padding: 12px; }
   #scroll_height > div {
-    margin-bottom: 12px; }
+    margin-bottom: 12px;
+    border-radius: 6px;
+    overflow: hidden; }
   #scroll_height > div:last-child {
     margin-bottom: 0; }
 
@@ -68,7 +70,8 @@ a {
   #delivery_or_restaurant > div {
     width: 50%; }
   #delivery_or_restaurant > div > div {
-    padding: 16px 0; }
+    padding: 16px 0;
+    border-radius: 6px; }
   #delivery_or_restaurant img {
     width: 70px;
     height: 70px; }
@@ -94,8 +97,7 @@ a {
 #building_chat {
   width: 100%;
   background-color: white;
-  color: #555555;
-  margin-bottom: 12px; }
+  color: #555555; }
   #building_chat img {
     width: 80px;
     height: 80px; }
@@ -115,8 +117,10 @@ a {
     #editors_restaurant > #title i {
       color: tomato; }
   #editors_restaurant > #image {
-    height: 240px; }
+    height: 240px;
+    border-radius: 0 0 6px 6px; }
     #editors_restaurant > #image > div {
+      border-radius: 0 0 6px 6px;
       position: absolute;
       width: 100%;
       left: 0px;

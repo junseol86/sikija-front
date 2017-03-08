@@ -19,14 +19,16 @@
       </div>
     </div>
 
-    <table id="building_chat">
-      <tr>
-        <td>
-          <img src="/app/Images/Interface/building_chat.png">
-        </td>
-        <td>배달업체 평가, 리뷰 기능이 준비중입니다.  조금만 기다려주세요 ^^</td>
-      </tr>
-    </table>
+    <div>
+      <table id="building_chat">
+        <tr>
+          <td>
+            <img src="/app/Images/Interface/building_chat.png">
+          </td>
+          <td>배달업체 평가, 리뷰 기능이 준비중입니다.  조금만 기다려주세요 ^^</td>
+        </tr>
+      </table>
+    </div>
 
     <div *ngIf="restaurants[0]" id="editors_restaurant" (click)="selectRestaurant(restaurants[0].id)">
       <div id="title"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 에디터 추천</div>
