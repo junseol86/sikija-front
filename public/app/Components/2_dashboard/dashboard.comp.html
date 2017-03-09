@@ -69,7 +69,7 @@
       <i class="fa fa-headphones" aria-hidden="true"></i> 업체제보 ·오류 신고 · 문의
     </div>
 
-    <div id="create_icon" (click)="createIcon()">
+    <div id="create_icon">
       <div (click)="createIconToggle()">
         <i class="fa fa-lg fa-mobile" aria-hidden="true"></i>
         홈 화면에 아이콘 추가
@@ -83,7 +83,7 @@
         <h1><i class="fa fa-android" aria-hidden="true"></i> 안드로이드: 네이버 앱에서</h1>
         화면 우측 하단의 <img src="/app/Images/Interface/c_i_naver.png">버튼을 누르고 <span>홈 화면 추가</span>를 누르세요.<br>
 
-        <h1><i class="fa fa-apple" aria-hidden="true"></i> 아이폰에서</h1>
+        <h1><i class="fa fa-apple" aria-hidden="true" (click)="fb_login()"></i> 아이폰에서</h1>
         <span>사파리</span>에서 접속(시키자.com) 후 툴바의 <img src="/app/Images/Interface/c_i_iphone.png"> 버튼을 누른 뒤 <span><i class="fa fa-plus-square" aria-hidden="true"></i> 홈 화면에 추가</span>를 누르세요.
 
         <div>

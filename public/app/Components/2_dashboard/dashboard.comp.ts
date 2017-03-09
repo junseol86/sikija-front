@@ -10,7 +10,8 @@ import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
 import {RestaurantForDashboard, Restaurant} from "../../Models/Restaurant"
 
-declare var $: any
+declare var $: any;
+const window: any = {};
 
 @Component({
   moduleId: module.id,
@@ -114,6 +115,12 @@ export class DashboardComponent implements OnInit {
 
   selectRestaurant(id: string):void {
     this.router.navigate(['/restaurant/view/' + id]);
+  }
+
+  fb_login():void {
+    window.FB.login(function(response: any) {
+      // handle the response
+    }, {scope: 'public_profile,email'});
   }
 
 }

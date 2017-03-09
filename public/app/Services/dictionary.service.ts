@@ -30,6 +30,7 @@ export class DictionaryService {
   };
 
   dong = {
+    daedodong: '대도동',
     daeheungdong: '대흥동',
     deoksandong: '덕산동',
     duhodong: '두호동',
