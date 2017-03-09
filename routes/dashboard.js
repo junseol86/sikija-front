@@ -44,11 +44,29 @@
     var condition;
     condition = {};
     return MongoClient.connect(url, function(err, db) {
-      var delivery;
+      var restaurant;
       assert.equal(null, err);
-      delivery = db.collection('dashboard');
-      delivery.find(condition).toArray(function(err, docs) {
+      restaurant = db.collection('dashboard');
+      restaurant.find(condition).toArray(function(err, docs) {
         return res.send(docs[0]['restaurants']);
+      });
+      return db.close;
+    });
+  });
+
+  router.get('/new_restaurants', function(req, res, next) {
+    var condition;
+    condition = {};
+    return MongoClient.connect(url, function(err, db) {
+      var restaurant;
+      assert.equal(null, err);
+      restaurant = db.collection('restaurant');
+      restaurant.find(condition).sort({
+        id: -1
+      }).limit(2).toArray(function(err, docs) {
+        return res.send({
+          data: docs
+        });
       });
       return db.close;
     });

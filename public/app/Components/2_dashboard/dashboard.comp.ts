@@ -8,7 +8,7 @@ import { DashboardService } from '../../Services/dashboard.service'
 
 import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
-import {RestaurantForDashboard} from "../../Models/Restaurant"
+import {RestaurantForDashboard, Restaurant} from "../../Models/Restaurant"
 
 declare var $: any
 
@@ -25,6 +25,8 @@ export class DashboardComponent implements OnInit {
   regionName: string = '';
   jobs: Job[] = [];
   restaurants: RestaurantForDashboard[] = [];
+  newRestaurants: Restaurant[] = [];
+  dictionary: DictionaryService;
 
   constructor(
     private router: Router,
@@ -32,7 +34,10 @@ export class DashboardComponent implements OnInit {
     private locationService: LocationService,
     private dashboardService: DashboardService,
     private dict: DictionaryService
-  ) { }
+  ) {
+    this.dictionary = dict;
+  }
+
 
   ngOnInit(): void {
     $.getScript('/app/Scripts/_sizer.js');
@@ -42,7 +47,7 @@ export class DashboardComponent implements OnInit {
       this.getALocation();
       this.getJobs();
       this.getRestaurants();
-
+      this.getNewRestaurants();
     });
   }
 
@@ -92,6 +97,15 @@ export class DashboardComponent implements OnInit {
   afterGettingRestaurants(restaurants: RestaurantForDashboard[]):void {
     this.restaurants = restaurants;
     $.getScript('/app/Scripts/2_dashboard_restaurant.js');
+  }
+
+  getNewRestaurants(): void {
+    this.dashboardService
+      .getNewRestaurants().then(newRestaurants => this.afterGettingNewRestaurants(newRestaurants));
+  }
+
+  afterGettingNewRestaurants(newRestaurants: Restaurant[]): void {
+    this.newRestaurants = newRestaurants;
   }
 
   linkTo(link: string) {

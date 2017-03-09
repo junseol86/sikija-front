@@ -38,7 +38,7 @@ export class DictionaryService {
     jukdodong: '죽도동',
     uhyeondong: '우현동',
     yangdeokdong: '양덕동',
-  }
+  };
 
   delCategory = {
     korean: '한식',
@@ -48,7 +48,7 @@ export class DictionaryService {
     fusion: '퓨전',
     fastfood: '패스트푸드',
     others: '기타',
-  }
+  };
 
   resCategory = {
     korean: '한식',

@@ -24,7 +24,16 @@ router.get '/restaurants', (req, res, next) ->
   condition = {}
   MongoClient.connect url, (err, db) ->
     assert.equal null, err
-    delivery = db.collection 'dashboard'
-    delivery.find(condition).toArray (err, docs) ->
+    restaurant = db.collection 'dashboard'
+    restaurant.find(condition).toArray (err, docs) ->
       res.send docs[0]['restaurants']
+    db.close
+
+router.get '/new_restaurants', (req, res, next) ->
+  condition = {}
+  MongoClient.connect url, (err, db) ->
+    assert.equal null, err
+    restaurant = db.collection 'restaurant'
+    restaurant.find(condition).sort({id:-1}).limit(2).toArray (err, docs) ->
+      res.send {data: docs}
     db.close

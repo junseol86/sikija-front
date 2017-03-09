@@ -117,10 +117,8 @@ a {
     #editors_restaurant > #title i {
       color: tomato; }
   #editors_restaurant > #image {
-    height: 240px;
-    border-radius: 0 0 6px 6px; }
+    height: 240px; }
     #editors_restaurant > #image > div {
-      border-radius: 0 0 6px 6px;
       position: absolute;
       width: 100%;
       left: 0px;
@@ -133,6 +131,20 @@ a {
       text-align: center; }
       #editors_restaurant > #image > div i {
         opacity: 0.5; }
+  #editors_restaurant > .new_restaurant {
+    padding: 12px;
+    border-bottom: 1px solid #dedede; }
+    #editors_restaurant > .new_restaurant:last-child {
+      border-bottom: 0; }
+    #editors_restaurant > .new_restaurant > span.new_sign {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: tomato;
+      opacity: 0.75;
+      margin-right: 6px; }
+    #editors_restaurant > .new_restaurant span.info {
+      color: #bfbfbf;
+      font-size: 0.9em; }
 
 #jobs_section {
   background-color: white; }

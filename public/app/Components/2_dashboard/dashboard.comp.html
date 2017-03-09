@@ -30,16 +30,24 @@
       </table>
     </div>
 
-    <div *ngIf="restaurants[0]" id="editors_restaurant" (click)="selectRestaurant(restaurants[0].id)">
+    <div *ngIf="restaurants[0]" id="editors_restaurant">
       <div id="title"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 에디터 추천</div>
-      <div class="_pos_rel" id="image" [attr.data-bgsrc]="restaurants[0].image">
+      <div class="_pos_rel" id="image" [attr.data-bgsrc]="restaurants[0].image" (click)="selectRestaurant(restaurants[0].id)">
         <div><i class="fa fa-quote-left" aria-hidden="true"></i> {{restaurants[0].desc}} <i class="fa fa-quote-right" aria-hidden="true"></i></div>
+      </div>
+      <div class="new_restaurant _float_con" *ngFor="let newRestaurant of newRestaurants" (click)="selectRestaurant(newRestaurant.id)">
+        <span class="new_sign">NEW</span>
+        {{newRestaurant.name}}
+        <div class="_f_right">
+          <span class="info">{{dictionary.dongKor(newRestaurant.dong)}} · </span>
+          <span class="info" *ngFor="let category of newRestaurant.category">{{dictionary.resCatKor(category)}} </span>
+        </div>
       </div>
     </div>
 
     <div id="jobs_section">
       <div id="jobs_bar" class="_float_con">
-        <span><span>DDJob</span> 일하자!</span>
+        <span><span>DDJob</span> 돈벌자!</span>
         <div class="_f_right" (click)="linkTo('http://job.ddhouse.co.kr')"><i class="fa fa-plus" aria-hidden="true"></i> 더보기</div>
       </div>
       <div class="video_container">

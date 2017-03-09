@@ -8,7 +8,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import {Job} from '../Models/Job';
-import {RestaurantForDashboard} from "../Models/Restaurant";
+import {RestaurantForDashboard, Restaurant} from "../Models/Restaurant";
 
 @Injectable()
 export class DashboardService {
@@ -29,6 +29,14 @@ export class DashboardService {
     return this.http.get(restaurantUrl)
       .toPromise()
       .then(response => response.json() as RestaurantForDashboard[])
+      .catch(this.handleError);
+  }
+
+  getNewRestaurants(): Promise<Restaurant[]> {
+    var newRestaurantUrl = '/dashboard/new_restaurants';
+    return this.http.get(newRestaurantUrl)
+      .toPromise()
+      .then(response => response.json().data as Restaurant[])
       .catch(this.handleError);
   }
 

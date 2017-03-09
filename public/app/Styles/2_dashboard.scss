@@ -84,9 +84,7 @@
   }
   & > #image {
     height: 240px;
-    border-radius: 0 0 6px 6px;
     & > div {
-      border-radius: 0 0 6px 6px;
       position: absolute;
       width:100%;
       left: 0px;
@@ -100,6 +98,24 @@
       & i {
         opacity: 0.5;
       }
+    }
+  }
+  & > .new_restaurant {
+    padding: 12px;
+    border-bottom: 1px solid #dedede;
+    &:last-child {
+      border-bottom: 0;
+    }
+    & > span.new_sign {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: $sikija_color;
+      opacity: 0.75;
+      margin-right: 6px;
+    }
+    & span.info {
+      color: #bfbfbf;
+      font-size: 0.9em;
     }
   }
 }
