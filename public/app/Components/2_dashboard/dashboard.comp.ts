@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit {
     private dict: DictionaryService
   ) {
     this.dictionary = dict;
+
   }
 
 
@@ -48,6 +49,7 @@ export class DashboardComponent implements OnInit {
       this.getJobs();
       this.getRestaurants();
       this.getNewRestaurants();
+
     });
   }
 
@@ -115,5 +117,6 @@ export class DashboardComponent implements OnInit {
   selectRestaurant(id: string):void {
     this.router.navigate(['/restaurant/view/' + id]);
   }
+
 
 }
