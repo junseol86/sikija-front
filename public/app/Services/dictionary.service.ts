@@ -62,5 +62,7 @@ export class DictionaryService {
     meat: '고기',
     fastfood: '패스트푸드',
     others: '기타',
+    bakery: '베이커리',
+    cafe: '카페'
   }
 }
