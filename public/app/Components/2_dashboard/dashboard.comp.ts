@@ -10,7 +10,9 @@ import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
 import {RestaurantForDashboard, Restaurant} from "../../Models/Restaurant"
 
+
 declare var $: any;
+declare const FB:any;
 
 @Component({
   moduleId: module.id,
@@ -27,15 +29,25 @@ export class DashboardComponent implements OnInit {
   restaurants: RestaurantForDashboard[] = [];
   newRestaurants: Restaurant[] = [];
   dictionary: DictionaryService;
+  loggedIn:boolean = false;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private locationService: LocationService,
     private dashboardService: DashboardService,
-    private dict: DictionaryService
+    private dict: DictionaryService,
   ) {
     this.dictionary = dict;
+
+    FB.init({
+      appId      : '898278946975693',
+      cookie     : true,  // enable cookies to allow the server to access
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.8' // use graph api version 2.8
+    });
+
 
   }
 
@@ -49,8 +61,27 @@ export class DashboardComponent implements OnInit {
       this.getJobs();
       this.getRestaurants();
       this.getNewRestaurants();
-
     });
+
+    this.fb_checkLogin();
+  }
+
+  fb_login() {
+    FB.login((response:any) => {
+      this.afterCheckingLogin(response);
+    });
+  }
+
+  fb_checkLogin() {
+    FB.getLoginStatus((response:any) => {
+      this.afterCheckingLogin(response);
+    });
+  }
+
+  afterCheckingLogin(response:any) {
+    console.log(response);
+    if (response.status != 'unknown')
+      this.loggedIn = true;
   }
 
   getALocation(): void {

@@ -56,13 +56,20 @@ a {
     background-color: white; }
 
 #scroll_height {
-  padding: 12px; }
+  padding: 14px; }
   #scroll_height > div {
     margin-bottom: 12px;
     border-radius: 6px;
     overflow: hidden; }
   #scroll_height > div:last-child {
     margin-bottom: 0; }
+
+#facebook-login {
+  text-align: center;
+  background-color: #3b5998;
+  padding: 12px 14px 10px 14px;
+  color: white;
+  font-size: 0.9em; }
 
 #delivery_or_restaurant {
   text-align: center;

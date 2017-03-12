@@ -35,6 +35,7 @@ export class DictionaryService {
     deoksandong: '덕산동',
     duhodong: '두호동',
     hwanhodong: '환호동',
+    hyogokdong: '효곡동',
     jangseongdong: '장성동',
     jukdodong: '죽도동',
     uhyeondong: '우현동',

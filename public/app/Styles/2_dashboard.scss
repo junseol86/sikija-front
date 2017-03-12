@@ -1,7 +1,7 @@
 @import "common";
 
 #scroll_height {
-  padding: 12px;
+  padding: 14px;
   & > div {
     margin-bottom: 12px;
     border-radius: 6px;
@@ -10,6 +10,13 @@
   & > div:last-child {
     margin-bottom: 0;
   }
+}
+
+#facebook-login {
+  text-align: center;
+  background-color: #3b5998;
+  padding: 12px 14px 10px 14px;
+  color: white;
 }
 
 #delivery_or_restaurant {
