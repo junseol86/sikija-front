@@ -32,7 +32,9 @@ export class DictionaryService {
   dong = {
     daedodong: '대도동',
     daeheungdong: '대흥동',
+    daeidong: '대이동',
     deoksandong: '덕산동',
+    dongbindong: '동빈동',
     duhodong: '두호동',
     hwanhodong: '환호동',
     hyogokdong: '효곡동',
