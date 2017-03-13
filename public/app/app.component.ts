@@ -9,7 +9,6 @@ declare var ga:Function;
   template: `
     <div id="outer_space">
       <div id="outer_wrapper">
-          <!--<topBar></topBar>-->
           <router-outlet></router-outlet>
       </div>
     </div>
