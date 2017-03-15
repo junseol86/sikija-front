@@ -16,18 +16,18 @@
       </div>
     </div>
 
-    <div class="delivery_item {{delivery.desc[locationId] == '' ? 'short' : 'tall'}}" *ngFor="let delivery of deliveries" (click)="selectDelivery(delivery.id)">
+    <div class="delivery_item {{delivery.desc[locationId] == '' ? 'short' : 'tall'}}" *ngFor="let delivery of deliveryState.deliveries" (click)="selectDelivery(delivery.id)" id="{{delivery.id}}">
       <div class="delivery_name">{{delivery.name}}</div>
       <div *ngIf="delivery.desc[locationId] != ''" class="delivery_desc">{{delivery.desc[locationId]}}</div>
     </div>
 
-    <div *ngIf="isMore == 2" class="loading_more">
+    <div *ngIf="deliveryState.isMore == 2" class="loading_more">
       <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
     </div>
-    <div *ngIf="isMore == 1" class="loading_more">
+    <div *ngIf="deliveryState.isMore == 1" class="loading_more">
       Loading...
     </div>
-    <div *ngIf="isMore == 0 && deliveries.length == 0" class="loading_more">
+    <div *ngIf="deliveryState.isMore == 0 && deliveryState.deliveries.length == 0" class="loading_more">
       <i class="fa fa-ban" aria-hidden="true"></i>
       등록된 배달업체가 없습니다.
     </div>

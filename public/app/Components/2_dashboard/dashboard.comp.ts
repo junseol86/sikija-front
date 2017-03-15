@@ -9,6 +9,7 @@ import { DashboardService } from '../../Services/dashboard.service'
 import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
 import {RestaurantForDashboard, Restaurant} from "../../Models/Restaurant"
+import {SingletonService} from "../../Services/singleton.service";
 
 
 declare var $: any;
@@ -30,6 +31,8 @@ export class DashboardComponent implements OnInit {
   newRestaurants: Restaurant[] = [];
   dictionary: DictionaryService;
   loggedIn:boolean = false;
+
+  sgtSvc = SingletonService.getInstance();
 
   constructor(
     private router: Router,
@@ -53,6 +56,8 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.sgtSvc.setDeliveryStateNull();
+
     $.getScript('/app/Scripts/_sizer.js');
     $.getScript('/app/Scripts/_image_processor.js');
     this.activatedRoute.params.subscribe((params: Params) => {

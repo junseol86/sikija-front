@@ -33,6 +33,7 @@ export class DictionaryService {
     daedodong: '대도동',
     daeheungdong: '대흥동',
     daeidong: '대이동',
+    daejamdong: '대잠동',
     deoksandong: '덕산동',
     dongbindong: '동빈동',
     duhodong: '두호동',
@@ -68,6 +69,7 @@ export class DictionaryService {
     fastfood: '패스트푸드',
     others: '기타',
     bakery: '베이커리',
+    brunch: '브런치',
     cafe: '카페'
   }
 }

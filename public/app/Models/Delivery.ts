@@ -20,3 +20,11 @@ export class DeliveryAndMore {
     this.deliveries = deliveries;
   }
 }
+
+export class DeliveryState {
+  offset = 0;
+  isMore:Number = 2;
+  categoryId: string = 'all';
+  deliveries: Delivery[] = [];
+  scrollTo: number = null;
+}

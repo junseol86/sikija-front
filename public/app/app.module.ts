@@ -22,12 +22,13 @@ import { DashboardService } from './Services/dashboard.service'
 import { DictionaryService } from './Services/dictionary.service'
 import {HttpModule} from "@angular/http";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+import {SingletonService} from "./Services/singleton.service";
 
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
   declarations: [ AppComponent, TopBarComponent,
     LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent, RestaurantViewComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, LocationService, DictionaryService, DashboardService,
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, LocationService, DictionaryService, DashboardService, SingletonService,
     CookieService,],
   bootstrap:    [ AppComponent ]
 })
