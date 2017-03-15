@@ -26,8 +26,9 @@ export class DeliveryComponent implements OnInit {
     private router: Router,
     private deliveryService: DeliveryService,
     private activatedRoute: ActivatedRoute,
-    private location: Location
-  ) { }
+    private location: Location,
+  ) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {

@@ -78,10 +78,15 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  fb_logout() {
+    FB.logout((response:any) => {
+      this.afterCheckingLogin(response);
+    })
+  }
+
   afterCheckingLogin(response:any) {
     console.log(response);
-    if (response.status != 'unknown')
-      this.loggedIn = true;
+    this.loggedIn = response.status != 'unknown' ? true : false;
   }
 
   getALocation(): void {

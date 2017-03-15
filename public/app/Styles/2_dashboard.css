@@ -64,12 +64,11 @@ a {
   #scroll_height > div:last-child {
     margin-bottom: 0; }
 
-#facebook-login {
+.facebook-btn {
   text-align: center;
   background-color: #3b5998;
   padding: 12px 14px 10px 14px;
-  color: white;
-  font-size: 0.9em; }
+  color: white; }
 
 #delivery_or_restaurant {
   text-align: center;

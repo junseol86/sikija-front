@@ -28,7 +28,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
   declarations: [ AppComponent, TopBarComponent,
     LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent, RestaurantViewComponent ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, LocationService, DictionaryService, DashboardService,
-    CookieService],
+    CookieService,],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
-declare var $: any
+declare var $: any;
 
 @Component({
   moduleId: module.id,
