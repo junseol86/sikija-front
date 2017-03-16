@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common'
 import { DictionaryService } from '../../Services/dictionary.service'
-import {Restaurant, RestaurantAndMore} from "../../Models/Restaurant";
+import {Restaurant, RestaurantAndMore, RestaurantState} from "../../Models/Restaurant";
 import { RestaurantService } from "../../Services/restaurant.service"
+import {SingletonService} from "../../Services/singleton.service";
 
 declare var $: any
 
@@ -15,24 +16,24 @@ declare var $: any
 })
 
 export class RestaurantComponent implements OnInit {
-  offset = 0;
-  isMore:Number = 2;
+  top_bar_menu_set: string = "btn_home";
   locationId: string = '';
   regionId: string = '';
-  dongId: string = '';
-  categoryId: string = '';
-  top_bar_menu_set: string = "btn_home";
-  dictionary: DictionaryService;
-  dongs: string[] = null;
+
   resCategories: string[] = null;
-  restaurants: Restaurant[] = [];
+  dongs: string[] = null;
+  dictionary: DictionaryService;
+
+  restaurantState: RestaurantState;
+
+  sgtSvc = SingletonService.getInstance();
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location,
     private dict: DictionaryService,
-    private restaurantService: RestaurantService
+    private restaurantService: RestaurantService,
+    private location: Location
   ) {
     this.dictionary = dict;
     this.dongs = Object.keys(dict.dong);
@@ -42,9 +43,17 @@ export class RestaurantComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
-      this.dongId = 'all';
-      this.categoryId = 'all';
-      this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+      this.restaurantState = this.sgtSvc.getRestaurantState();
+      if (this.restaurantState.restaurants.length == 0)
+        this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
+      else {
+        $('#scroll_area').animate({
+          scrollTop: this.restaurantState.scrollTo
+        }, 300);
+      }
+
+      // $('#dong_select').val(this.restaurantState.dongId);
+      // $('#category_select').val(this.restaurantState.categoryId);
 
       $.getScript('/app/Scripts/_sizer.js');
     });
@@ -53,41 +62,49 @@ export class RestaurantComponent implements OnInit {
 
   getRestaurants(region: string, dong: string, category: string): void {
     this.restaurantService
-      .getRestaurants(region, dong, category, this.offset)
+      .getRestaurants(region, dong, category, this.restaurantState.offset)
       .then(restaurantAndMore => this.afterResService(restaurantAndMore));
   }
 
   afterResService(restaurantAndMore: RestaurantAndMore) {
-    this.isMore = restaurantAndMore.more;
-    this.restaurants = this.restaurants.concat(restaurantAndMore.restaurants);
+    this.restaurantState.isMore = restaurantAndMore.more;
+    this.restaurantState.restaurants = this.restaurantState.restaurants.concat(restaurantAndMore.restaurants);
   }
 
   whenReachedBottom() {
-    if (this.isMore > 0) {
+    if (this.restaurantState.isMore > 0) {
       if($('#scroll_area').scrollTop() + $('#scroll_area').height() > $('#scroll_height').height() - 50) {
-        this.offset++;
-        this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+        this.restaurantState.offset++;
+        this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
       }
     }
   }
 
   selectDong():void {
-    this.isMore = 2;
-    this.offset = 0;
-    this.restaurants = [];
-    this.dongId = $('#dong_select').val();
-    this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+    this.restaurantState.dongChange($('#dong_select').val());
+    this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
   }
 
   selectCategory():void {
-    this.isMore = 2;
-    this.offset = 0;
-    this.restaurants = [];
-    this.categoryId = $('#category_select').val();
-    this.getRestaurants(this.locationId, this.dongId, this.categoryId);
+    this.restaurantState.categoryChange($('#category_select').val());
+
+    this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
   }
 
   selectRestaurant(id: string):void {
+
+    // 다시 목록으로 돌아올 때 클릭한 곳으로 스크롤되도록 높이를 저장
+    var offset:number = $('#update_notice').outerHeight();
+    var proceed:boolean = true;
+    $('.restaurant_item').each(function (idx:number, obj:number) {
+      if ($(obj).attr('id') != id.toString() && proceed) {
+        offset += $(obj).outerHeight();
+      } else {
+        proceed = false;
+      }
+    });
+    this.restaurantState.scrollTo = offset;
+
     this.router.navigate(['/restaurant/view/' + id]);
   }
 

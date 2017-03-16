@@ -19,10 +19,6 @@ export class DeliveryComponent implements OnInit {
   top_bar_menu_set: string = "btn_home";
   locationId: string = '';
 
-  // offset = 0;
-  // isMore:Number = 2;
-  // categoryId: string = 'all';
-  // deliveries: Delivery[] = [];
   deliveryState: DeliveryState;
 
   sgtSvc = SingletonService.getInstance();
@@ -39,11 +35,9 @@ export class DeliveryComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
       this.deliveryState = this.sgtSvc.getDeliveryState();
-      // this.deliveryState.categoryId = 'all';
       if (this.deliveryState.deliveries.length == 0)
         this.getDeliveries(this.locationId, this.deliveryState.categoryId);
       else {
-        console.log(this.deliveryState.scrollTo);
         $('#scroll_area').animate({
           scrollTop: this.deliveryState.scrollTo
         }, 300);
@@ -76,28 +70,26 @@ export class DeliveryComponent implements OnInit {
   }
 
   selectCategory(category: string):void {
-    this.deliveryState.isMore = 2;
-    this.deliveryState.offset = 0;
-    this.deliveryState.deliveries = [];
-    this.deliveryState.categoryId = category;
+    this.deliveryState.categoryChange(category);
     this.getDeliveries(this.locationId, this.deliveryState.categoryId);
     $('.selected').removeClass('selected');
     $('#' + this.deliveryState.categoryId).addClass('selected');
   }
 
   selectDelivery(id: string):void {
+
     // 다시 목록으로 돌아올 때 클릭한 곳으로 스크롤되도록 높이를 저장
     var offset:number = $('#update_notice').outerHeight();
     var proceed:boolean = true;
     $('.delivery_item').each(function (idx:number, obj:number) {
       if ($(obj).attr('id') != id.toString() && proceed) {
         offset += $(obj).outerHeight();
-        console.log(offset);
       } else {
         proceed = false;
       }
     });
     this.deliveryState.scrollTo = offset;
+
     this.router.navigate(['/delivery/' + this.locationId + '/view/' + id]);
   }
 

@@ -37,3 +37,25 @@ export class RestaurantForDashboard {
   image: string;
   desc: string;
 }
+
+export class RestaurantState {
+  offset = 0;
+  isMore:Number = 2;
+  dongId: string = 'all';
+  categoryId: string = 'all';
+  restaurants: Restaurant[] = [];
+  scrollTo: number = null;
+  dongChange(dong: string) {
+    this.isMore = 2;
+    this.offset = 0;
+    this.restaurants = [];
+    this.dongId = dong;
+  }
+  categoryChange(category: string) {
+    this.isMore = 2;
+    this.offset = 0;
+    this.restaurants = [];
+    this.categoryId = category;
+  }
+
+}

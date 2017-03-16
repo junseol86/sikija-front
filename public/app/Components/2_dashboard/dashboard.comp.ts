@@ -56,7 +56,9 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    //대시보드로 돌아올 때는 모든 페이지 상태 저장을 초기화
     this.sgtSvc.setDeliveryStateNull();
+    this.sgtSvc.setRestaurantStateNull();
 
     $.getScript('/app/Scripts/_sizer.js');
     $.getScript('/app/Scripts/_image_processor.js');

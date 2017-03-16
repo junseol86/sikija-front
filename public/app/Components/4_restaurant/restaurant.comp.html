@@ -23,7 +23,7 @@
         <i class="fa fa-plus-square-o" aria-hidden="true"></i> 제보하기
       </div>
     </div>
-    <div class="restaurant_item" *ngFor="let restaurant of restaurants" (click)="selectRestaurant(restaurant.id)">
+    <div class="restaurant_item" *ngFor="let restaurant of restaurantState.restaurants" (click)="selectRestaurant(restaurant.id)" id="{{restaurant.id}}">
       <div class="restaurant_info">
         {{dictionary.dongKor(restaurant.dong)}} ·
         <span *ngFor="let category of restaurant.category">{{dictionary.resCatKor(category)}} </span>
@@ -31,13 +31,13 @@
       <div class="restaurant_name">{{restaurant.name}}</div>
     </div>
 
-    <div *ngIf="isMore == 2" class="loading_more">
+    <div *ngIf="restaurantState.isMore == 2" class="loading_more">
       <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
     </div>
-    <div *ngIf="isMore == 1" class="loading_more">
+    <div *ngIf="restaurantState.isMore == 1" class="loading_more">
       Loading...
     </div>
-    <div *ngIf="isMore == 0 && restaurants.length == 0" class="loading_more">
+    <div *ngIf="restaurantState.isMore == 0 && restaurantState.restaurants.length == 0" class="loading_more">
       <i class="fa fa-ban" aria-hidden="true"></i>
       등록된 식당이 없습니다.
     </div>

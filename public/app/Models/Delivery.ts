@@ -27,4 +27,10 @@ export class DeliveryState {
   categoryId: string = 'all';
   deliveries: Delivery[] = [];
   scrollTo: number = null;
+  categoryChange(category: string):void {
+    this.offset = 0;
+    this.isMore = 2;
+    this.deliveries = [];
+    this.categoryId = category;
+  }
 }
