@@ -52,9 +52,6 @@ export class RestaurantComponent implements OnInit {
         }, 300);
       }
 
-      // $('#dong_select').val(this.restaurantState.dongId);
-      // $('#category_select').val(this.restaurantState.categoryId);
-
       $.getScript('/app/Scripts/_sizer.js');
     });
 

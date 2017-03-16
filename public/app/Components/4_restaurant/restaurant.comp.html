@@ -2,15 +2,27 @@
 <div id="sub_menu_bar" class="_float_con">
   <div>
     <select id="dong_select" (change)="selectDong()">
-      <option value="all">모든 동네 </option>
-      <option *ngFor="let key of dongs" value="{{key}}">{{dictionary.dongKor(key)}}</option>
+      <option
+        [attr.value]="'all'"
+        [attr.selected]="restaurantState.dongId == 'all' ? true : null"
+      >모든 동네 </option>
+      <option *ngFor="let key of dongs"
+              [attr.value]='key'
+              [attr.selected]="restaurantState.dongId == key ? true : null"
+      >{{dictionary.dongKor(key)}}</option>
     </select>
     <i class="fa fa-chevron-down" aria-hidden="true"></i>
   </div>
   <div>
     <select id="category_select" (change)="selectCategory()">
-      <option value="all">모든 음식 </option>
-      <option *ngFor="let key of resCategories" value="{{key}}">{{dictionary.resCatKor(key)}}</option>
+      <option
+        [attr.value]="'all'"
+        [attr.selected]="restaurantState.categoryId == 'all' ? true : null"
+      >모든 음식 </option>
+      <option *ngFor="let key of resCategories"
+              [attr.value]='key'
+              [attr.selected]="restaurantState.categoryId == key ? true : null"
+      >{{dictionary.resCatKor(key)}}</option>
     </select>
     <i class="fa fa-chevron-down" aria-hidden="true"></i>
   </div>
