@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var location = require('./routes/location');
 var delivery = require('./routes/delivery');
 var restaurant = require('./routes/restaurant');
+var franchise = require('./routes/franchise');
 var dashboard = require('./routes/dashboard');
 var users = require('./routes/users');
 
@@ -30,6 +31,7 @@ app.use('/', routes);
 app.use('/location', location);
 app.use('/delivery', delivery);
 app.use('/restaurant', restaurant);
+app.use('/franchise', franchise);
 app.use('/dashboard', dashboard);
 app.use('/users', users);
 

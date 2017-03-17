@@ -2,15 +2,16 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/routes/index.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_intro.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/3_delivery.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/_sizer.js" />
-        <item url="file://$PROJECT_DIR$/routes/restaurant.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/_image_processor.js" />
+        <item url="file://$PROJECT_DIR$/routes/index.js" />
+        <item url="file://$PROJECT_DIR$/routes/restaurant.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/0_app.js" />
         <item url="file://$PROJECT_DIR$/routes/location.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/4_restaurant.js" />
+        <item url="file://$PROJECT_DIR$/routes/franchise.js" />
         <item url="file://$PROJECT_DIR$/public/app/Scripts/2_dashboard_restaurant.js" />
         <item url="file://$PROJECT_DIR$/routes/dashboard.js" />
         <item url="file://$PROJECT_DIR$/routes/delivery.js" />
@@ -29,6 +30,7 @@
       <root url="file://$PROJECT_DIR$/public/app/Scripts/0_app.js" />
       <root url="file://$PROJECT_DIR$/routes/location.js" />
       <root url="file://$PROJECT_DIR$/public/app/Scripts/4_restaurant.js" />
+      <root url="file://$PROJECT_DIR$/routes/franchise.js" />
       <root url="file://$PROJECT_DIR$/public/app/Scripts/2_dashboard_restaurant.js" />
       <root url="file://$PROJECT_DIR$/routes/dashboard.js" />
       <root url="file://$PROJECT_DIR$/routes/delivery.js" />

@@ -19,45 +19,48 @@
   color: white;
 }
 
-#delivery_or_restaurant {
+#delivery_and_restaurant {
   text-align: center;
-  color: white;
+  color: #555555;
+  border-radius: 6px;
+  overflow: hidden;
   & > div {
     width: 50%;
   }
   & > div > div {
-    padding: 16px 0;
-    border-radius: 6px;
+    padding: 12px 0;
+    background-color: white;
   }
   & img {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
   }
   & #to_delivery {
-    padding-right: 4px;
-    & > div {
-      background-image: url('app/Images/Interface/to_delivery_bg.png');
-      background-size: cover;
-    }
-    &:active > div {
-      background: #ff7b40 none;
-    }
+    padding-right: 0.5px;
   }
   & #to_restaurant {
-    padding-left: 4px;
-    & > div {
-      background-image: url('app/Images/Interface/to_restaurant_bg.png');
-      background-size: cover;
-    }
-    &:active > div {
-      background: #6c93ff none;
-    }
+    padding-left: 0.5px;
+  }
+  & #to_cafeteria {
+    padding-right: 0.5px;
+    padding-top: 1px;
+  }
+  & #to_franchise {
+    padding-left: 0.5px;
+    padding-top: 1px;
   }
   & h1 {
-    margin: 2px;
-    font-size: 1.4em;
+    margin: 1px;
+    font-size: 1.2em;
     font-weight: bold;
   }
+  & span {
+    opacity: 0.67;
+  }
+}
+
+#cafeteria_and_franchise {
+  margin-top: -4px;
 }
 
 #building_chat {

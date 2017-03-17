@@ -70,35 +70,38 @@ a {
   padding: 12px 14px 10px 14px;
   color: white; }
 
-#delivery_or_restaurant {
+#delivery_and_restaurant {
   text-align: center;
-  color: white; }
-  #delivery_or_restaurant > div {
+  color: #555555;
+  border-radius: 6px;
+  overflow: hidden; }
+  #delivery_and_restaurant > div {
     width: 50%; }
-  #delivery_or_restaurant > div > div {
-    padding: 16px 0;
-    border-radius: 6px; }
-  #delivery_or_restaurant img {
-    width: 70px;
-    height: 70px; }
-  #delivery_or_restaurant #to_delivery {
-    padding-right: 4px; }
-    #delivery_or_restaurant #to_delivery > div {
-      background-image: url("app/Images/Interface/to_delivery_bg.png");
-      background-size: cover; }
-    #delivery_or_restaurant #to_delivery:active > div {
-      background: #ff7b40 none; }
-  #delivery_or_restaurant #to_restaurant {
-    padding-left: 4px; }
-    #delivery_or_restaurant #to_restaurant > div {
-      background-image: url("app/Images/Interface/to_restaurant_bg.png");
-      background-size: cover; }
-    #delivery_or_restaurant #to_restaurant:active > div {
-      background: #6c93ff none; }
-  #delivery_or_restaurant h1 {
-    margin: 2px;
-    font-size: 1.4em;
+  #delivery_and_restaurant > div > div {
+    padding: 12px 0;
+    background-color: white; }
+  #delivery_and_restaurant img {
+    width: 64px;
+    height: 64px; }
+  #delivery_and_restaurant #to_delivery {
+    padding-right: 0.5px; }
+  #delivery_and_restaurant #to_restaurant {
+    padding-left: 0.5px; }
+  #delivery_and_restaurant #to_cafeteria {
+    padding-right: 0.5px;
+    padding-top: 1px; }
+  #delivery_and_restaurant #to_franchise {
+    padding-left: 0.5px;
+    padding-top: 1px; }
+  #delivery_and_restaurant h1 {
+    margin: 1px;
+    font-size: 1.2em;
     font-weight: bold; }
+  #delivery_and_restaurant span {
+    opacity: 0.67; }
+
+#cafeteria_and_franchise {
+  margin-top: -4px; }
 
 #building_chat {
   width: 100%;

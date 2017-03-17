@@ -12,6 +12,7 @@ export class Delivery {
   desc: Object;
 }
 
+// 리스트에서 더 받아올 페이지가 있는지를 확인하기 위한 인스턴스
 export class DeliveryAndMore {
   more: Number;
   deliveries: Delivery[];
@@ -21,6 +22,7 @@ export class DeliveryAndMore {
   }
 }
 
+// 리스트에서 상세로 들어갔다가 돌아올 때 페이지 등을 유지하기 위한 인스턴스
 export class DeliveryState {
   offset = 0;
   isMore:Number = 2;
