@@ -14,8 +14,8 @@ export class RestaurantService {
   constructor(private http: Http) { }
 
   // Array 형태일때는 response.json() 뒤에 .data를 붙이지 않는다.
-  getRestaurants(region: string, dong:string, category: string, offset: Number): Promise<RestaurantAndMore> {
-    const url = `${this.restaurantUrl}/list/${region}/${dong}/${category}/${offset}`;
+  getRestaurants(location: string, dong:string, category: string, offset: Number): Promise<RestaurantAndMore> {
+    const url = `${this.restaurantUrl}/list/${location}/${dong}/${category}/${offset}`;
     return this.http.get(url)
       .toPromise()
       .then(response => new RestaurantAndMore(response.json().data.more, response.json().data.restaurant))

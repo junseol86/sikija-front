@@ -1,0 +1,55 @@
+<topBar [locationId]="locationId" [menu_set]="top_bar_menu_set"></topBar>
+<div id="sub_menu_bar" class="_float_con">
+  <div>
+    <select id="zone_select" (change)="selectZone()">
+      <option
+        [attr.value]="'all'"
+        [attr.selected]="zoneId == 'all' ? true : null"
+      >모든 지역 </option>
+      <option *ngFor="let key of zones"
+              [attr.value]='key'
+              [attr.selected]="zoneId == key ? true : null"
+      >{{dictionary.franchiseZoneKor(key)}}</option>
+    </select>
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  </div>
+  <div>
+    <select id="category_select" (change)="selectCategory()">
+      <option
+        [attr.value]="'all'"
+        [attr.selected]="categoryId == 'all' ? true : null"
+      >모든 업소 </option>
+      <option *ngFor="let key of franCategories"
+              [attr.value]='key'
+              [attr.selected]="categoryId == key ? true : null"
+      >{{dictionary.franCatKor(key)}}</option>
+    </select>
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  </div>
+</div>
+<div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
+  <div id="scroll_height">
+    <div class="franchise_item" *ngFor="let franchise of franchises" (click)="selectDelivery(franchise.id)" id="{{franchise.id}}">
+      <div class="franchise_info">
+        {{dictionary.franchiseZoneKor(franchise.zone)}} · {{dictionary.franCatKor(franchise.category)}}
+      </div>
+      <div class="franchise_name">{{franchise.name}}</div>
+      <div *ngFor="let desc of franchise.desc" class="desc">
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{desc}}
+      </div>
+      <img *ngIf="regionId!=''" (click)="linkTo('https://search.naver.com/search.naver?where=nexearch&query=' + dictionary.regionKor(regionId) + '+' + franchise.name)"
+        src="/app/Images/Interface/naver_small_btn.png">
+    </div>
+
+    <div *ngIf="isMore == 2" class="loading_more">
+      <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+    </div>
+    <div *ngIf="isMore == 1" class="loading_more">
+      Loading...
+    </div>
+    <div *ngIf="isMore == 0 && franchises.length == 0" class="loading_more">
+      <i class="fa fa-ban" aria-hidden="true"></i>
+      등록된 업소가 없습니다.
+    </div>
+  </div>
+</div>

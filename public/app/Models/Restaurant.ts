@@ -19,6 +19,7 @@ export class RestaurantDetail {
   dong: string;
   name: string;
   links: string[];
+  // 서비스에서 스크랩해서 받아오는 링크제목
   link_n_title: Object[];
 }
 

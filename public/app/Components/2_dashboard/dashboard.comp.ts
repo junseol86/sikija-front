@@ -115,6 +115,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/restaurant/' + this.locationId])
   }
 
+  toFranchise(): void {
+    this.router.navigate(['/franchise/' + this.locationId])
+  }
+
   createIconToggle():void {
     let c_i_desc = $('#create_icon > div:last-child');
     if (c_i_desc.css('display') == 'none') {

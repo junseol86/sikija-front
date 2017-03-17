@@ -15,9 +15,11 @@ import { DashboardComponent } from './Components/2_dashboard/dashboard.comp'
 import { DeliveryComponent } from './Components/3_delivery/delivery.comp'
 import { DeliveryViewComponent } from './Components/3_delivery/delivery_view.comp'
 import { RestaurantComponent } from './Components/4_restaurant/restaurant.comp'
+import { FranchiseComponent } from './Components/5_franchise/franchise.comp'
 import { RestaurantViewComponent } from './Components/4_restaurant/restaurant_view.comp'
 import { DeliveryService } from './Services/delivery.service'
 import { RestaurantService } from './Services/restaurant.service'
+import { FranchiseService } from './Services/franchise.service'
 import { DashboardService } from './Services/dashboard.service'
 import { DictionaryService } from './Services/dictionary.service'
 import {HttpModule} from "@angular/http";
@@ -27,8 +29,9 @@ import {SingletonService} from "./Services/singleton.service";
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, HttpModule ],
   declarations: [ AppComponent, TopBarComponent,
-    LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent, RestaurantViewComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, LocationService, DictionaryService, DashboardService, SingletonService,
+    LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent, RestaurantViewComponent, FranchiseComponent ],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, FranchiseService,
+    LocationService, DictionaryService, DashboardService, SingletonService,
     CookieService,],
   bootstrap:    [ AppComponent ]
 })

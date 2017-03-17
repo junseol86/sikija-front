@@ -22,16 +22,15 @@ router.get '/list/:location/:zone/:category/:offset', (req, res, next) ->
   MongoClient.connect url, (err, db) ->
 
     location = db.collection 'location'
-    #    해당하는 location이 속한 지역을 알아낸다
     zoneCondition = if zone == 'all' then {} else {'zone': zone}
     categoryCondition = if category == 'all' then {} else {"category": {$in:[category]}}
-    condition = { $and: [zoneCondition, categoryCondition]}
+    condition = { $and: [{location: locationId}, zoneCondition, categoryCondition]}
     assert.equal null, err
     franchise = db.collection 'franchise'
     franchise.find(condition).count (err, count) ->
-#더 불러올 페이지가 있는지 확인
+      #더 불러올 페이지가 있는지 확인
       more = if (Number(offset) + 1) * Number(pageLimit) < Number(count) then 1 else 0
-      franchise.find(condition).sort({id:-1}).skip(pageLimit * offset).limit(pageLimit).toArray (err, docs) ->
+      franchise.find(condition).sort({name:1}).skip(pageLimit * offset).limit(pageLimit).toArray (err, docs) ->
         res.send {data: {more: more, franchise: docs}}
     db.close
 

@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+._pos_rel {
+  position: relative; }
+
+._float_con {
+  overflow: hidden; }
+  ._float_con > * {
+    float: left; }
+  ._float_con > ._f_right {
+    float: right; }
+  ._float_con:after {
+    clear: both; }
+
+._light_gray_bg {
+  background-color: #eaeaea; }
+
+._gray_bg {
+  background-color: #bfbfbf; }
+
+._dark_gray_bg {
+  background-color: #808080; }
+
+#sub_menu_bar {
+  width: 100%;
+  height: 44px;
+  background-color: #707070; }
+
+#scroll_area {
+  overflow: hidden; }
+  #scroll_area.vertical {
+    overflow-y: scroll; }
+  #scroll_area.horizontal {
+    overflow-x: scroll; }
+  #scroll_area.both {
+    overflow: scroll; }
+
+.loading_more {
+  color: tomato;
+  background-color: white;
+  text-align: center;
+  padding: 20px; }
+
+#bottom_bar {
+  height: 52px;
+  background-color: #efefef;
+  border-top: 1px solid #cdcdcd;
+  box-sizing: border-box;
+  color: #555555; }
+  #bottom_bar:active {
+    background-color: white; }
+
+#sub_menu_bar > div {
+  width: 50%;
+  height: 100%;
+  line-height: 100%;
+  padding: 0 12px;
+  color: white; }
+#sub_menu_bar select {
+  height: 100%;
+  color: white;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: #707070;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.franchise_item {
+  padding: 20px 16px 18px 16px;
+  border-bottom: 1px solid #EAEAEA;
+  position: relative; }
+  .franchise_item .franchise_info {
+    font-size: 0.9em;
+    color: #808080;
+    margin-bottom: 2px; }
+  .franchise_item .franchise_name {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1em; }
+  .franchise_item .desc {
+    font-size: 0.9em;
+    padding-left: 20px;
+    line-height: 1.6em;
+    position: relative; }
+    .franchise_item .desc i {
+      position: absolute;
+      left: 2px;
+      top: 3px;
+      color: tomato;
+      opacity: 0.5; }
+  .franchise_item img {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px; }
+
+/*# sourceMappingURL=5_franchise.css.map */

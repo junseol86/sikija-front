@@ -57,9 +57,9 @@ export class RestaurantComponent implements OnInit {
 
   }
 
-  getRestaurants(region: string, dong: string, category: string): void {
+  getRestaurants(location: string, dong: string, category: string): void {
     this.restaurantService
-      .getRestaurants(region, dong, category, this.restaurantState.offset)
+      .getRestaurants(location, dong, category, this.restaurantState.offset)
       .then(restaurantAndMore => this.afterResService(restaurantAndMore));
   }
 

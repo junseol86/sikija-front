@@ -1,0 +1,60 @@
+@import "common";
+
+#sub_menu_bar {
+  & > div {
+    width: 50%;
+    height: 100%;
+    line-height: 100%;
+    padding: 0 12px;
+    color: white;
+  }
+  & select {
+    height: 100%;
+    color: white;
+    font-size: 1em;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background-color: $sub_menu_bar_bg;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.franchise_item {
+  padding: 20px 16px 18px 16px;
+  border-bottom: 1px solid $light_line_color;
+  position: relative;
+  & .franchise_info {
+    font-size: 0.9em;
+    color: #808080;
+    margin-bottom: 2px;
+  }
+  & .franchise_name {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  & .desc {
+    font-size: 0.9em;
+    padding-left: 20px;
+    line-height: 1.6em;
+    position: relative;
+    & i {
+      position: absolute;
+      left: 2px;
+      top: 3px;
+      color: $sikija_color;
+      opacity: 0.5;
+    }
+  }
+  & img {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+  }
+}
