@@ -158,7 +158,6 @@ a {
 #jobs_section {
   background-color: white; }
   #jobs_section #jobs_bar {
-    border-bottom: 2px solid #40b4ff;
     height: 44px;
     line-height: 46px;
     padding: 0 12px; }

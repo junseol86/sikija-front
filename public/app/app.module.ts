@@ -22,6 +22,7 @@ import { RestaurantService } from './Services/restaurant.service'
 import { FranchiseService } from './Services/franchise.service'
 import { DashboardService } from './Services/dashboard.service'
 import { DictionaryService } from './Services/dictionary.service'
+import { FacebookService } from './Services/facebook.service'
 import {HttpModule} from "@angular/http";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import {SingletonService} from "./Services/singleton.service";
@@ -31,7 +32,7 @@ import {SingletonService} from "./Services/singleton.service";
   declarations: [ AppComponent, TopBarComponent,
     LocationComponent, DashboardComponent, DeliveryComponent, DeliveryViewComponent, RestaurantComponent, RestaurantViewComponent, FranchiseComponent ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DeliveryService, RestaurantService, FranchiseService,
-    LocationService, DictionaryService, DashboardService, SingletonService,
+    LocationService, DictionaryService, DashboardService, SingletonService, FacebookService,
     CookieService,],
   bootstrap:    [ AppComponent ]
 })

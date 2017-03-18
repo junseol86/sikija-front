@@ -11,7 +11,7 @@
               [attr.selected]="zoneId == key ? true : null"
       >{{dictionary.franchiseZoneKor(key)}}</option>
     </select>
-    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
   <div>
     <select id="category_select" (change)="selectCategory()">
@@ -24,7 +24,7 @@
               [attr.selected]="categoryId == key ? true : null"
       >{{dictionary.franCatKor(key)}}</option>
     </select>
-    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
 </div>
 <div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
@@ -37,8 +37,13 @@
       <div *ngFor="let desc of franchise.desc" class="desc">
         <i class="fa fa-check-circle-o" aria-hidden="true"></i> {{desc}}
       </div>
-      <img *ngIf="regionId!=''" (click)="linkTo('https://search.naver.com/search.naver?where=nexearch&query=' + dictionary.regionKor(regionId) + '+' + franchise.name)"
-        src="/app/Images/Interface/naver_small_btn.png">
+      <div class="naver_link">
+        <img *ngIf="regionId!=''" (click)="linkTo('https://search.naver.com/search.naver?where=nexearch&query=' + dictionary.regionKor(regionId) + '+' + franchise.name)"
+             src="/app/Images/Interface/naver_small_btn.png">
+      </div>
+      <div class="phone_call" (click)="callNumber(franchise.phone)">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+      </div>
     </div>
 
     <div *ngIf="isMore == 2" class="loading_more">

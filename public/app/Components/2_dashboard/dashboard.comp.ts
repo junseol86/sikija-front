@@ -10,10 +10,10 @@ import { DictionaryService } from '../../Services/dictionary.service'
 import {Job} from "../../Models/Job";
 import {RestaurantForDashboard, Restaurant} from "../../Models/Restaurant"
 import {SingletonService} from "../../Services/singleton.service";
+import {FacebookService} from "../../Services/facebook.service";
 
 
 declare var $: any;
-declare const FB:any;
 
 @Component({
   moduleId: module.id,
@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
   restaurants: RestaurantForDashboard[] = [];
   newRestaurants: Restaurant[] = [];
   dictionary: DictionaryService;
-  loggedIn:boolean = false;
+  fbService: FacebookService;
 
   sgtSvc = SingletonService.getInstance();
 
@@ -40,17 +40,12 @@ export class DashboardComponent implements OnInit {
     private locationService: LocationService,
     private dashboardService: DashboardService,
     private dict: DictionaryService,
+    private facebookService: FacebookService
   ) {
     this.dictionary = dict;
+    this.fbService = facebookService;
 
-    FB.init({
-      appId      : '898278946975693',
-      cookie     : true,  // enable cookies to allow the server to access
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.8' // use graph api version 2.8
-    });
-
+    this.fbService.init()
 
   }
 
@@ -70,31 +65,10 @@ export class DashboardComponent implements OnInit {
       this.getNewRestaurants();
     });
 
-    this.fb_checkLogin();
+    this.fbService.fb_checkLogin();
   }
 
-  fb_login() {
-    FB.login((response:any) => {
-      this.afterCheckingLogin(response);
-    });
-  }
 
-  fb_checkLogin() {
-    FB.getLoginStatus((response:any) => {
-      this.afterCheckingLogin(response);
-    });
-  }
-
-  fb_logout() {
-    FB.logout((response:any) => {
-      this.afterCheckingLogin(response);
-    })
-  }
-
-  afterCheckingLogin(response:any) {
-    console.log(response);
-    this.loggedIn = response.status != 'unknown' ? true : false;
-  }
 
   getALocation(): void {
     this.locationService

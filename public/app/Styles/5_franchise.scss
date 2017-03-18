@@ -50,11 +50,31 @@
       opacity: 0.5;
     }
   }
-  & img {
+  & .naver_link {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    border-radius: 4px;
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  & .phone_call {
+    position: absolute;
+    top: 16px;
+    right: 48px;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: $sikija_color;
+    color: white;
   }
 }

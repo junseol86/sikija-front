@@ -100,4 +100,12 @@ export class FranchiseComponent implements OnInit {
     window.open(link, '_blank');
   }
 
+  callNumber(number: string): void {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href='tel:' + number.replace('-', '');
+    } else {
+      alert('전화번호는 ' + number + ' 입니다.');
+    }
+  }
+
 }

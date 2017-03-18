@@ -5,6 +5,7 @@ import {Delivery, DeliveryAndMore, DeliveryState} from '../../Models/Delivery'
 import { DeliveryService } from '../../Services/delivery.service'
 import { Location } from '@angular/common'
 import {SingletonService} from "../../Services/singleton.service";
+import {FacebookService} from "../../Services/facebook.service";
 
 declare var $: any
 
@@ -22,16 +23,20 @@ export class DeliveryComponent implements OnInit {
   deliveryState: DeliveryState;
 
   sgtSvc = SingletonService.getInstance();
+  fbService: FacebookService;
 
   constructor(
     private router: Router,
     private deliveryService: DeliveryService,
     private activatedRoute: ActivatedRoute,
     private location: Location,
+    private facebookService: FacebookService
   ) {
+    this.fbService = facebookService;
   }
 
   ngOnInit(): void {
+    this.fbService.fb_checkLogin();
     this.activatedRoute.params.subscribe((params: Params) => {
       this.locationId = params['location'];
       this.deliveryState = this.sgtSvc.getDeliveryState();
