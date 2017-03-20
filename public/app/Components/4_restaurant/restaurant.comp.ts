@@ -91,7 +91,6 @@ export class RestaurantComponent implements OnInit {
 
   selectCategory():void {
     this.restaurantState.categoryChange($('#category_select').val());
-
     this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
   }
 
