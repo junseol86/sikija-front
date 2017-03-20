@@ -42,16 +42,23 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
+
+      // 속한 학교
       this.locationId = params['location'];
+
       this.restaurantState = this.sgtSvc.getRestaurantState();
+
       if (this.restaurantState.restaurants.length == 0)
+        // 이 페이지에 처음 들어왔다면
         this.getRestaurants(this.locationId, this.restaurantState.dongId, this.restaurantState.categoryId);
       else {
+        // 세부 페이지에 들어왔다가 나왔다면 이전 상태 로드
         $('#scroll_area').animate({
           scrollTop: this.restaurantState.scrollTo
         }, 300);
       }
 
+      // 화면 사이즈 조정
       $.getScript('/app/Scripts/_sizer.js');
     });
 
@@ -62,12 +69,12 @@ export class RestaurantComponent implements OnInit {
       .getRestaurants(location, dong, category, this.restaurantState.offset)
       .then(restaurantAndMore => this.afterResService(restaurantAndMore));
   }
-
   afterResService(restaurantAndMore: RestaurantAndMore) {
     this.restaurantState.isMore = restaurantAndMore.more;
     this.restaurantState.restaurants = this.restaurantState.restaurants.concat(restaurantAndMore.restaurants);
   }
 
+  // 화면 맨 아래로 스크롤했을 때
   whenReachedBottom() {
     if (this.restaurantState.isMore > 0) {
       if($('#scroll_area').scrollTop() + $('#scroll_area').height() > $('#scroll_height').height() - 50) {

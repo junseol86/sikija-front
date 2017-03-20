@@ -60,12 +60,12 @@ export class FranchiseComponent implements OnInit {
       .getFranchises(location, zone, category, this.offset)
       .then(franchiseAndMore => this.afterResService(franchiseAndMore));
   }
-
   afterResService(franchiseAndMore: FranchiseAndMore) {
     this.isMore = franchiseAndMore.more;
     this.franchises = this.franchises.concat(franchiseAndMore.franchises);
   }
 
+  // 학교가 속한 도시
   getRegion():void {
     this.locationService.getALocation(this.locationId).then(location => this.regionId = location.region);
   }
@@ -87,6 +87,7 @@ export class FranchiseComponent implements OnInit {
     this.getFranchises(this.locationId, this.zoneId, this.categoryId);
   }
 
+  // 화면 맨 아래로 스크롤했을 때
   whenReachedBottom() {
     if (this.isMore > 0) {
       if($('#scroll_area').scrollTop() + $('#scroll_area').height() > $('#scroll_height').height() - 50) {

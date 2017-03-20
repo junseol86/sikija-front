@@ -27,8 +27,10 @@
     <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
 </div>
+
 <div id="scroll_area" class="vertical" (scroll)="whenReachedBottom()">
   <div id="scroll_height">
+
     <div class="franchise_item" *ngFor="let franchise of franchises" (click)="selectDelivery(franchise.id)" id="{{franchise.id}}">
       <div class="franchise_info">
         {{dictionary.franchiseZoneKor(franchise.zone)}} · {{dictionary.franCatKor(franchise.category)}}

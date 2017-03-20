@@ -36,20 +36,30 @@ export class DeliveryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // 페이스북 로그인
     this.fbService.fb_checkLogin();
+
     this.activatedRoute.params.subscribe((params: Params) => {
+      // 속한 학교
       this.locationId = params['location'];
+
       this.deliveryState = this.sgtSvc.getDeliveryState();
+
       if (this.deliveryState.deliveries.length == 0)
+        // 이 페이지에 처음 들어왔다면
         this.getDeliveries(this.locationId, this.deliveryState.categoryId);
       else {
+        // 세부 페이지에 들어왔다가 나왔다면 이전 상태 로드
         $('#scroll_area').animate({
           scrollTop: this.deliveryState.scrollTo
         }, 300);
       }
 
+      // 선택되어있는 카테고리 화면에 표시
       $('#' + this.deliveryState.categoryId).addClass('selected');
 
+      // 화면 사이즈 조정
       $.getScript('/app/Scripts/_sizer.js');
     });
   }
@@ -59,12 +69,12 @@ export class DeliveryComponent implements OnInit {
       .getDeliveries(location, category, this.deliveryState.offset)
       .then(deliveryAndMore => this.afterDelService(deliveryAndMore));
   }
-
   afterDelService(deliveryAndMore: DeliveryAndMore) {
     this.deliveryState.isMore = deliveryAndMore.more;
     this.deliveryState.deliveries = this.deliveryState.deliveries.concat(deliveryAndMore.deliveries);
   }
 
+  // 화면 맨 아래로 스크롤했을 때
   whenReachedBottom() {
     if (this.deliveryState.isMore > 0) {
       if($('#scroll_area').scrollTop() + $('#scroll_area').height() > $('#scroll_height').height() - 50) {
