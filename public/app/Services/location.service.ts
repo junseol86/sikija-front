@@ -11,7 +11,7 @@ import { Location } from '../Models/Location';
 @Injectable()
 export class LocationService {
   private headers = new Headers({'Content-Type': 'application/json'});
-  private locationUrl = 'location';
+  private locationUrl = 'backend/location';
 
   constructor(private http: Http) { }
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="52b9a68c-d6b2-400f-b4ba-e34de9240ded" name="ConoHa" url="http://133.130.103.96">
+      <webServer id="52b9a68c-d6b2-400f-b4ba-e34de9240ded" name="ConoHa (project level)" url="http://133.130.103.96">
         <fileTransfer host="133.130.103.96" port="22" rootFolder="/root" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />

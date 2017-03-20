@@ -9,7 +9,7 @@ import { DeliveryAndMore } from '../Models/Delivery';
 @Injectable()
 export class DeliveryService {
   private headers = new Headers({'Content-Type': 'application/json'});
-  private deliveryUrl = 'delivery';
+  private deliveryUrl = 'backend/delivery';
 
   constructor(private http: Http) { }
 

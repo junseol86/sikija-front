@@ -57,6 +57,7 @@ export class DictionaryService {
     songdodong: '송도동',
     uhyeondong: '우현동',
     yangdeokdong: '양덕동',
+    yeonamdong: '여남동'
   };
 
   delCategory = {

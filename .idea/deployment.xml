@@ -5,11 +5,11 @@
       <paths name="ConoHa">
         <serverdata>
           <mappings>
-            <mapping deploy="/sikija" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/root/sikija" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="DEV">
+      <paths name="ConoHa (project level)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

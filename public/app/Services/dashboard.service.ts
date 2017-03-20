@@ -17,7 +17,7 @@ export class DashboardService {
   constructor(private http: Http) { }
 
   getJobs(): Promise<Job[]> {
-    var jobUrl = '/dashboard/jobs';
+    var jobUrl = '/backend/dashboard/jobs';
     return this.http.get(jobUrl)
       .toPromise()
       .then(response => response.json() as Job[])
@@ -25,7 +25,7 @@ export class DashboardService {
   }
 
   getRestaurants(): Promise<RestaurantForDashboard[]> {
-    var restaurantUrl = '/dashboard/restaurants';
+    var restaurantUrl = '/backend/dashboard/restaurants';
     return this.http.get(restaurantUrl)
       .toPromise()
       .then(response => response.json() as RestaurantForDashboard[])
@@ -33,7 +33,7 @@ export class DashboardService {
   }
 
   getNewRestaurants(): Promise<Restaurant[]> {
-    var newRestaurantUrl = '/dashboard/new_restaurants';
+    var newRestaurantUrl = '/backend/dashboard/new_restaurants';
     return this.http.get(newRestaurantUrl)
       .toPromise()
       .then(response => response.json().data as Restaurant[])

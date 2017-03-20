@@ -12,7 +12,7 @@ import {FranchiseAndMore} from "../Models/Franchise";
 @Injectable()
 export class FranchiseService {
   private headers = new Headers({'Content-Type': 'application/json'});
-  private franchiseUrl = 'franchise';
+  private franchiseUrl = 'backend/franchise';
 
   constructor(private http: Http) {  }
 

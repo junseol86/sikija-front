@@ -9,13 +9,15 @@ import { RestaurantAndMore } from '../Models/Restaurant';
 @Injectable()
 export class RestaurantService {
   private headers = new Headers({'Content-Type': 'application/json'});
-  private restaurantUrl = 'restaurant';
+  // private restaurantUrl = 'http://localhost:9001/restaurant';
+  private restaurantUrl = 'backend/restaurant';
 
   constructor(private http: Http) { }
 
   // Array 형태일때는 response.json() 뒤에 .data를 붙이지 않는다.
   getRestaurants(location: string, dong:string, category: string, offset: Number): Promise<RestaurantAndMore> {
     const url = `${this.restaurantUrl}/list/${location}/${dong}/${category}/${offset}`;
+    console.log(url);
     return this.http.get(url)
       .toPromise()
       .then(response => new RestaurantAndMore(response.json().data.more, response.json().data.restaurant))
